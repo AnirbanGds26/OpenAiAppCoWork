@@ -644,7 +644,7 @@
       "MetaDataIDKey": "",
       "Name": "btnHistSlTax",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1969,7 +1969,7 @@
       "MetaDataIDKey": "",
       "Name": "CompDialogBgCover_Tax1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2059,7 +2059,7 @@
       "MetaDataIDKey": "",
       "Name": "CompDialogBgCover_Tax2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14553,7 +14553,7 @@
       "MetaDataIDKey": "",
       "Name": "editSLTaxForm",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 10,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -20245,7 +20245,7 @@
       "MetaDataIDKey": "",
       "Name": "Gallery4_7",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 18,
+      "ParentIndex": 20,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -20755,7 +20755,7 @@
       "MetaDataIDKey": "",
       "Name": "glHistSlTax",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 17,
+      "ParentIndex": 19,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21149,7 +21149,7 @@
       "MetaDataIDKey": "",
       "Name": "icnClsHistSlTax",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 15,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21448,7 +21448,7 @@
       "MetaDataIDKey": "",
       "Name": "icnHistSlTax",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21874,7 +21874,7 @@
       "MetaDataIDKey": "",
       "Name": "Icon2_7",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -22755,7 +22755,7 @@
       "MetaDataIDKey": "",
       "Name": "Label11_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 13,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -23061,7 +23061,7 @@
       "MetaDataIDKey": "",
       "Name": "Label9",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 20,
+      "ParentIndex": 22,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -23379,7 +23379,7 @@
       "MetaDataIDKey": "",
       "Name": "Label9_5",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 19,
+      "ParentIndex": 21,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -24020,7 +24020,7 @@
       "MetaDataIDKey": "",
       "Name": "lblHeaderSlTax",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -24353,7 +24353,7 @@
       "MetaDataIDKey": "",
       "Name": "lblHeaderStatusSlTax",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -24687,7 +24687,7 @@
       "MetaDataIDKey": "",
       "Name": "lblPanelHistSlTax",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 14,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26053,7 +26053,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle13_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 16,
+      "ParentIndex": 18,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26172,7 +26172,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle2_17",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26459,7 +26459,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle4",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 22,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26619,7 +26619,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle4_9",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 21,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26786,7 +26786,7 @@
       "MetaDataIDKey": "",
       "Name": "rectBgHistSlTax",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26924,7 +26924,7 @@
       "MetaDataIDKey": "",
       "Name": "rectCommentSecSlTax",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 11,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -27078,7 +27078,7 @@
       "MetaDataIDKey": "",
       "Name": "rectHeaderSlTax",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 9,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -27240,7 +27240,7 @@
       "MetaDataIDKey": "",
       "Name": "rectPanelHistSlTax",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 12,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

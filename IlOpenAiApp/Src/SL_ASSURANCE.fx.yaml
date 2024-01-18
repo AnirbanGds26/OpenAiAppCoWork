@@ -1,7 +1,7 @@
 SL_ASSURANCE As screen:
     Fill: =RGBA(34, 36, 46, 1)
 
-    Label3_7 As label:
+    lblHeadingAssur As label:
         Color: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Semibold
         Height: =70
@@ -343,6 +343,7 @@ SL_ASSURANCE As screen:
         PaddingRight: =1
         PaddingTop: =1
         Tooltip: ="Refresh View"
+        Visible: =false
         Width: =30
         X: =1063
         Y: =tglPendReqFilterAssur.Y+tglPendReqFilterAssur.Height/2-Self.Height/2
@@ -473,6 +474,17 @@ SL_ASSURANCE As screen:
             Y: =562
             ZIndex: =16
 
+    iconFilterAssur As icon.Add:
+        Color: =RGBA(255, 230, 0, 1)
+        FocusedBorderThickness: =0
+        Height: =30
+        Icon: =Icon.Filter
+        Tooltip: ="Filter"
+        Width: =30
+        X: =1063
+        Y: =23
+        ZIndex: =23
+
     iconHelpSlAssur As icon.Add:
         Color: =RGBA(255, 255, 255, 1)
         Height: =36
@@ -483,7 +495,7 @@ SL_ASSURANCE As screen:
         Width: =36
         X: =13
         Y: =If(IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.ADMIN),630,UserAddBtn_5.Y)
-        ZIndex: =22
+        ZIndex: =24
 
     txtSearchGalSLAssurance As text:
         BorderColor: =RGBA(202, 202, 202, 1)
@@ -502,48 +514,9 @@ SL_ASSURANCE As screen:
         Tooltip: ="Search by Project Name or Owner"
         X: =600
         Y: =20
-        ZIndex: =23
+        ZIndex: =25
 
-    Group2_2 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =23
-
-        Rectangle3_2 As rectangle:
-            Fill: =RGBA(18, 19, 33, 1)
-            Height: =336
-            Visible: =If(helpscreen2,true,false)
-            Width: =547
-            X: =427
-            Y: =213
-            ZIndex: =19
-
-        Icon6_8 As icon.Cancel:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =36
-            Icon: =Icon.Cancel
-            OnSelect: =Set(helpscreen2,false)
-            Visible: =If(helpscreen2,true,false)
-            Width: =36
-            X: =923
-            Y: =226
-            ZIndex: =20
-
-        Label8_2 As label:
-            Align: =Align.Justify
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =139
-            Text: |-
-                ="In case of questions or issues: EY-Fabric-OpenAI <eyfabric.openai@ey.com> or use or contact form by clicking mail icon on the left menu"
-            Visible: =If(helpscreen2,true,false)
-            Width: =453
-            X: =473
-            Y: =318
-            ZIndex: =21
-
-    lblSLTaxGalCount_1 As label:
+    lblSLAssurGalCount As label:
         Align: =Align.Right
         Color: =RGBA(219, 219, 219, 1)
         DisplayMode: =DisplayMode.View
@@ -555,7 +528,7 @@ SL_ASSURANCE As screen:
         Width: =200
         X: =1115
         Y: =80
-        ZIndex: =24
+        ZIndex: =26
 
     CompGenAiHelp_Assur As CompGenAiHelp:
         OnBtnMailClicked: |-
@@ -563,5 +536,55 @@ SL_ASSURANCE As screen:
         OnCloseIconClicked: |-
             =UpdateContext({ctxShowHelpDlg: false })
         Visible: =ctxShowHelpDlg
-        ZIndex: =25
+        ZIndex: =27
+
+    grpFilterPaneAssur As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =31
+
+        btnFilterBgPaneAssur As button:
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.View
+            Height: =65
+            Text: =""
+            Width: =450
+            X: =iconFilterAssur.X+iconFilterAssur.Width-Self.Width
+            Y: =lblHeadingAssur.Y+lblHeadingAssur.Height+2
+            ZIndex: =19
+
+        lblCountryFilter As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =35
+            Size: =12
+            Text: |-
+                ="Country:"
+            Width: =85
+            X: =btnFilterBgPaneAssur.X+10
+            Y: =btnFilterBgPaneAssur.Y+btnFilterBgPaneAssur.Height/2-Self.Height/2
+            ZIndex: =20
+
+        ddlCountryFilterAssur As dropdown:
+            BorderThickness: =0
+            ChevronBackground: =RGBA(255, 230, 0, 1)
+            ChevronFill: =RGBA(102, 102, 102, 1)
+            FocusedBorderThickness: =0
+            Height: =35
+            Items: =If(tglPendReqFilterAssur,SortByColumns(Distinct(Filter(ccUnqLeadContries,cr41e_serviceline="Assurance" And cr41e_status='IL-OpenAI-RequestStatus'.'Awaiting Service Line'),cr41e_leadingcountry),"Value",SortOrder.Ascending),SortByColumns(Distinct(Filter(ccUnqLeadContries,cr41e_serviceline="Assurance"),cr41e_leadingcountry),"Value",SortOrder.Ascending))
+            Width: =200
+            X: =lblCountryFilter.X+lblCountryFilter.Width
+            Y: =lblCountryFilter.Y
+            ZIndex: =21
+
+        iconCloseFilterAssur As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =20
+            Icon: =Icon.Cancel
+            Width: =20
+            X: =btnFilterBgPaneAssur.X+btnFilterBgPaneAssur.Width-Self.Width-12
+            Y: =btnFilterBgPaneAssur.Y+10
+            ZIndex: =22
 

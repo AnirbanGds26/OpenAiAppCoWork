@@ -171,7 +171,14 @@
           "NameMapSourceSchema": "?"
         },
         "Width",
-        "Height",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Height",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "ZIndex",
         {
           "AFDDataSourceName": "",
@@ -2683,7 +2690,7 @@
       "MetaDataIDKey": "",
       "Name": "crclAdmCardDpOtr",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 16,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2996,7 +3003,7 @@
       "MetaDataIDKey": "",
       "Name": "crclAdmCardInfoOtr",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 14,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3309,7 +3316,7 @@
       "MetaDataIDKey": "",
       "Name": "crclAdmCardRiskOtr",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 15,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8668,7 +8675,7 @@
       "MetaDataIDKey": "",
       "Name": "lblDep_ID_AdmGlVal",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 13,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12471,7 +12478,7 @@
       "MetaDataIDKey": "",
       "Name": "lblStatusAdmGl",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 11,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12796,7 +12803,7 @@
       "MetaDataIDKey": "",
       "Name": "lblStatusAdmGlVal_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 17,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14422,7 +14429,7 @@
       "MetaDataIDKey": "",
       "Name": "rectAdmCardBottom",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 12,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

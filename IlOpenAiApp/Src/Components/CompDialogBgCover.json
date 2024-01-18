@@ -74,7 +74,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "CompDialogBgCover",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 5,
+        "PublishOrderIndex": 1411,
         "Rules": [
           {
             "Category": "Design",
