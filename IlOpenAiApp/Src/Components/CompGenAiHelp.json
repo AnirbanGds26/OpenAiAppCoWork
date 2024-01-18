@@ -74,7 +74,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "CompGenAiHelp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1427,
+        "PublishOrderIndex": 1433,
         "Rules": [
           {
             "Category": "Design",
@@ -265,7 +265,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "CompGenAiHelp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1428,
+        "PublishOrderIndex": 1434,
         "Rules": [
           {
             "Category": "Design",
@@ -516,7 +516,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "CompGenAiHelp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1429,
+        "PublishOrderIndex": 1435,
         "Rules": [
           {
             "Category": "Data",
@@ -892,7 +892,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "CompGenAiHelp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1430,
+        "PublishOrderIndex": 1436,
         "Rules": [
           {
             "Category": "Design",
@@ -1205,7 +1205,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "CompGenAiHelp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1431,
+        "PublishOrderIndex": 1437,
         "Rules": [
           {
             "Category": "Data",
@@ -1513,7 +1513,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "CompGenAiHelp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1432,
+        "PublishOrderIndex": 1438,
         "Rules": [
           {
             "Category": "Data",
@@ -1902,7 +1902,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "CompGenAiHelp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1433,
+        "PublishOrderIndex": 1439,
         "Rules": [
           {
             "Category": "Data",
