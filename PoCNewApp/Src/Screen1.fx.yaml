@@ -12,3 +12,10 @@ Screen1 As screen:
         Y: =150
         ZIndex: =1
 
+    TextInput1 As text:
+        Default: ="WelCome"
+        Fill: =RGBA(102, 113, 166, 1)
+        X: =516
+        Y: =252
+        ZIndex: =2
+
