@@ -2523,7 +2523,7 @@
       "MetaDataIDKey": "",
       "Name": "crclAdmCardDpInr",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 18,
+      "ParentIndex": 20,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2683,7 +2683,7 @@
       "MetaDataIDKey": "",
       "Name": "crclAdmCardDpOtr",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 15,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2843,7 +2843,7 @@
       "MetaDataIDKey": "",
       "Name": "crclAdmCardInfoInr",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 16,
+      "ParentIndex": 18,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2996,7 +2996,7 @@
       "MetaDataIDKey": "",
       "Name": "crclAdmCardInfoOtr",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 13,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3149,7 +3149,7 @@
       "MetaDataIDKey": "",
       "Name": "crclAdmCardRiskInr",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 17,
+      "ParentIndex": 19,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3309,7 +3309,7 @@
       "MetaDataIDKey": "",
       "Name": "crclAdmCardRiskOtr",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 14,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6429,7 +6429,7 @@
       "MetaDataIDKey": "",
       "Name": "lblAdmCardDpTtl",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 21,
+      "ParentIndex": 23,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6719,7 +6719,7 @@
       "MetaDataIDKey": "",
       "Name": "lblAdmCardInfoTtl",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 19,
+      "ParentIndex": 21,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7016,7 +7016,7 @@
       "MetaDataIDKey": "",
       "Name": "lblAdmCardRiskTtl",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 20,
+      "ParentIndex": 22,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8668,7 +8668,7 @@
       "MetaDataIDKey": "",
       "Name": "lblDep_ID_AdmGlVal",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 12,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12471,7 +12471,7 @@
       "MetaDataIDKey": "",
       "Name": "lblStatusAdmGl",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 10,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12796,7 +12796,7 @@
       "MetaDataIDKey": "",
       "Name": "lblStatusAdmGlVal_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 13,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
