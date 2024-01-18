@@ -7,7 +7,7 @@ Screen2 As screen:
         Height: =464
         Size: =50
         Text: |-
-            ="Test Git Page #2"
+            ="Test Git Page #2 (Title Changed)"
         Width: =946
         X: =183
         Y: =150
