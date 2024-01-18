@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "a6168042-8b49-4ef6-a552-8ca8efdf8146",
+    "Name": "EWHubApprovalV3",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "86f73f15-7d8e-ee11-8179-000d3a572f57"
+  }
+]

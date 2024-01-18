@@ -1,0 +1,73 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": false,
+  "ComponentManifest": {
+    "AllowAccessToGlobals": false,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "AppHeader",
+    "TemplateGuid": "3557c6c352854491a2df483af9f8d76c"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [
+    {
+      "Category": 0,
+      "DisplayName": "EmailAddress",
+      "Hidden": false,
+      "Name": "EmailAddress",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom input property which stores Email Address",
+      "Type": "{\"Version\":\"1.336\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "EmailSubject",
+      "Hidden": false,
+      "Name": "EmailSubject",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property which stores Email Subject",
+      "Type": "{\"Version\":\"1.336\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "AppName",
+      "Hidden": false,
+      "Name": "AppName",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom input property to set AppName",
+      "Type": "{\"Version\":\"1.336\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "AppDetails",
+      "Hidden": false,
+      "Name": "AppDetails",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom input property to store App Details",
+      "Type": "{\"Version\":\"1.336\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "TeamName",
+      "Hidden": false,
+      "Name": "TeamName",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom input property to store Team Name",
+      "Type": "{\"Version\":\"1.336\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    }
+  ],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": false,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "638411646690899901",
+  "Name": "3557c6c352854491a2df483af9f8d76c",
+  "OverridableProperties": {},
+  "TemplateOriginalName": "9013042c4a694c72a6e1f1969cd2f9eb",
+  "Version": "637634817441210770"
+}

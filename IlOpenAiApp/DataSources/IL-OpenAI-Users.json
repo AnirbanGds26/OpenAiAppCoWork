@@ -1,0 +1,129 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr41e_ilopenaiuserses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr41e_ilopenaiusers",
+    "MaxGetRowsCount": 2000,
+    "Name": "IL-OpenAI-Users",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr41e_accessgroup": "Access Group",
+      "cr41e_ilopenaiusers_AsyncOperations": "System Jobs",
+      "cr41e_ilopenaiusers_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr41e_ilopenaiusers_DuplicateBaseRecord": "Duplicate Records (cr41e_ilopenaiusers_DuplicateBaseRecord)",
+      "cr41e_ilopenaiusers_DuplicateMatchingRecord": "Duplicate Records (cr41e_ilopenaiusers_DuplicateMatchingRecord)",
+      "cr41e_ilopenaiusers_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr41e_ilopenaiusers_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr41e_ilopenaiusers_ProcessSession": "Process Sessions",
+      "cr41e_ilopenaiusers_SyncErrors": "Sync Errors",
+      "cr41e_ilopenaiusersid": "IL-OpenAI-Users",
+      "cr41e_useremail": "User Email",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "IL-OpenAI-Users",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "IL-OpenAI-Users (Views)",
+    "Name": "_cr41e_ilopenaiusers_views",
+    "RelatedEntityName": "IL-OpenAI-Users",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "34ec0d0b-1dbb-4f85-812a-28cd2e426283": "IL-OpenAI-Users Advanced Find View",
+      "63376372-4419-47bd-a99a-3c8640bc7faa": "Inactive IL-OpenAI-Users",
+      "abf94486-13bd-4da0-9dcd-a965be76c50f": "Active IL-OpenAI-Users",
+      "bb0541d7-e9cc-4978-ae79-ae810b399b27": "IL-OpenAI-Users Associated View",
+      "e5f4c05e-486e-4cda-8838-ab7f3204cc17": "IL-OpenAI-Users Lookup View"
+    }
+  },
+  {
+    "DisplayName": "IL-OpenAI-AccessGroups",
+    "Name": "cr41e_ilopenaiaccessgroups",
+    "OptionSetInfoNameMapping": {
+      "1": "ADMIN",
+      "10": "Assurance",
+      "11": "EW Hub",
+      "12": "UK&I",
+      "13": "Consulting",
+      "2": "Data Protection",
+      "3": "Risk",
+      "4": "InfoSec Global",
+      "5": "InfoSec Consulting & SaT",
+      "6": "InfoSec Tax",
+      "7": "InfoSec Assurance",
+      "8": "InfoSec CBS",
+      "9": "Tax"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr41e_accessgroup",
+        "OptionSetReferenceEntityName": "IL-OpenAI-Users"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr41e_accessgroup",
+    "RelatedEntityName": "IL-OpenAI-Users",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (IL-OpenAI-Users)",
+    "Name": "cr41e_ilopenaiusers_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "IL-OpenAI-Users"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "IL-OpenAI-Users",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (IL-OpenAI-Users)",
+    "Name": "cr41e_ilopenaiusers_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "IL-OpenAI-Users"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "IL-OpenAI-Users",
+    "Type": "OptionSetInfo"
+  }
+]

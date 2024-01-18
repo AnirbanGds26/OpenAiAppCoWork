@@ -1,0 +1,303 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr41e_ilopenaipocrequestses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr41e_ilopenaipocrequests",
+    "MaxGetRowsCount": 2000,
+    "Name": "IL-OpenAI-POC-Requests",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr41e_audithistory": "Audit History",
+      "cr41e_azurelocation": "Azure location",
+      "cr41e_clientconsent": "Client Consent",
+      "cr41e_clientinformationsource": "Client Information Source",
+      "cr41e_cognitivesearch": "Cognitive Search",
+      "cr41e_dataclassification": "Data Classification",
+      "cr41e_datadescription": "Data Description",
+      "cr41e_dataprotectionapproval": "Data Protection Approval",
+      "cr41e_datatype": "Data Type",
+      "cr41e_deploymentid": "Deployment ID",
+      "cr41e_engagementcode": "Engagement Code",
+      "cr41e_environments": "Environments",
+      "cr41e_estimatedenddate": "Estimated End Date",
+      "cr41e_ewhubapproval": "EW Hub Approval",
+      "cr41e_gischeckforuk": "GIS Check for UK Restrictions",
+      "cr41e_ilopenaipocrequests_AsyncOperations": "System Jobs",
+      "cr41e_ilopenaipocrequests_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr41e_ilopenaipocrequests_DuplicateBaseRecord": "Duplicate Records (cr41e_ilopenaipocrequests_DuplicateBaseRecord)",
+      "cr41e_ilopenaipocrequests_DuplicateMatchingRecord": "Duplicate Records (cr41e_ilopenaipocrequests_DuplicateMatchingRecord)",
+      "cr41e_ilopenaipocrequests_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr41e_ilopenaipocrequests_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr41e_ilopenaipocrequests_ProcessSession": "Process Sessions",
+      "cr41e_ilopenaipocrequests_SyncErrors": "Sync Errors",
+      "cr41e_ilopenaipocrequestsid": "IL-OpenAI-POC-Requests",
+      "cr41e_infosecapproval": "InfoSec Approval",
+      "cr41e_intellectualpropierty": "Restrictions",
+      "cr41e_leadingcountry": "Leading Country",
+      "cr41e_leadingcountryother": "Leading Country (Other)",
+      "cr41e_loganalytics": "Log Analytics",
+      "cr41e_memberfirmownrelationship": "Member Firm Own Relation Ship",
+      "cr41e_msp01group": "MSP01 Group",
+      "cr41e_nameoftheinstance": "Name of the Instance",
+      "cr41e_nameoftheresources": "Name of the Resources",
+      "cr41e_noncompliant": "Non-Compliant",
+      "cr41e_outputcontrols": "Output",
+      "cr41e_passthru": "Passthru",
+      "cr41e_personaldata": "Personal Data",
+      "cr41e_pocbriefdescription": "Project Brief Description",
+      "cr41e_pocconsiderationscontrols": "POC Considerations Controls",
+      "cr41e_pocintendedusecase": "Project Intended Use Case",
+      "cr41e_pocrequestname": "Project Request Name",
+      "cr41e_projectname": "Project Name",
+      "cr41e_projectowner": "Project Owner",
+      "cr41e_projectsponsor": "Project Sponsor",
+      "cr41e_responsestatus": "Response Status",
+      "cr41e_retentionperiod": "Retention Period",
+      "cr41e_riskapproval": "Risk Approval",
+      "cr41e_serviceline": "Service Line",
+      "cr41e_servicelineapproval": "Service Line Approval",
+      "cr41e_servicelineapproverscount": "Service Line Approvers Count",
+      "cr41e_servicelineminapprovers": "Service Line Min. Approvers",
+      "cr41e_servicelineother": "Service Line (Other)",
+      "cr41e_slapproversemails": "SLApproversEmails",
+      "cr41e_slapprovershistory": "Service Line Approvers History",
+      "cr41e_status": "Status",
+      "cr41e_storageaccount": "Storage Account",
+      "cr41e_subjecttoip": "Subject to IP",
+      "cr41e_subserviceline": "Sub Service Line",
+      "cr41e_successcase": "Success Case",
+      "cr41e_testapproach": "Test Approach",
+      "cr41e_thirdpartdata": "Third Part Data",
+      "cr41e_tolerance": "Tolerance",
+      "cr41e_ukauditclientattest": "UK Audit Client Attestation",
+      "cr41e_vnet": "Vnet",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status of Request",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "IL-OpenAI-POC-Requests",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "IL-OpenAI-POC-Requests (Views)",
+    "Name": "_cr41e_ilopenaipocrequests_views",
+    "RelatedEntityName": "IL-OpenAI-POC-Requests",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "15320baf-8561-4e06-abd7-7f44cd9271b2": "IL-OpenAI-POC-Requests Advanced Find View",
+      "430d42cd-09a3-4f15-b454-4848ee5643c5": "Active IL-OpenAI-POC-Requests",
+      "6bdfb45a-a3da-4b6d-9233-806db1b36d87": "Inactive IL-OpenAI-POC-Requests",
+      "87bdbc43-8a1c-4fe3-901d-c4a7a25613b4": "IL-OpenAI-POC-Requests Lookup View",
+      "c1d3d74f-bf7e-48d6-aef8-7b31e5036f43": "IL-OpenAI-POC-Requests Associated View"
+    }
+  },
+  {
+    "DisplayName": "IL-OpenAI-Approvals",
+    "Name": "cr41e_ilopenaiapprovals",
+    "OptionSetInfoNameMapping": {
+      "1": "Pending Review",
+      "2": "Approved",
+      "3": "Rejected",
+      "4": "N/A",
+      "5": "In Progress"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr41e_dataprotectionapproval",
+        "OptionSetReferenceEntityName": "IL-OpenAI-POC-Requests"
+      },
+      "OptionSetReferenceItem1": {
+        "OptionSetReferenceColumnName": "cr41e_ewhubapproval",
+        "OptionSetReferenceEntityName": "IL-OpenAI-POC-Requests"
+      },
+      "OptionSetReferenceItem2": {
+        "OptionSetReferenceColumnName": "cr41e_infosecapproval",
+        "OptionSetReferenceEntityName": "IL-OpenAI-POC-Requests"
+      },
+      "OptionSetReferenceItem3": {
+        "OptionSetReferenceColumnName": "cr41e_riskapproval",
+        "OptionSetReferenceEntityName": "IL-OpenAI-POC-Requests"
+      },
+      "OptionSetReferenceItem4": {
+        "OptionSetReferenceColumnName": "cr41e_servicelineapproval",
+        "OptionSetReferenceEntityName": "IL-OpenAI-POC-Requests"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr41e_dataprotectionapproval",
+    "RelatedEntityName": "IL-OpenAI-POC-Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Member Firm Own Relation Ship (IL-OpenAI-POC-Requests)",
+    "Name": "cr41e_ilopenaipocrequests_cr41e_memberfirmownrelationship",
+    "OptionSetInfoNameMapping": {
+      "0": "Country 1",
+      "1": "Country 2",
+      "3": "Country 3"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr41e_memberfirmownrelationship",
+        "OptionSetReferenceEntityName": "IL-OpenAI-POC-Requests"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr41e_memberfirmownrelationship",
+    "RelatedEntityName": "IL-OpenAI-POC-Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Non-Compliant (IL-OpenAI-POC-Requests)",
+    "Name": "cr41e_ilopenaipocrequests_cr41e_noncompliant",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr41e_noncompliant",
+        "OptionSetReferenceEntityName": "IL-OpenAI-POC-Requests"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr41e_noncompliant",
+    "RelatedEntityName": "IL-OpenAI-POC-Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Passthru (IL-OpenAI-POC-Requests)",
+    "Name": "cr41e_ilopenaipocrequests_cr41e_passthru",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr41e_passthru",
+        "OptionSetReferenceEntityName": "IL-OpenAI-POC-Requests"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr41e_passthru",
+    "RelatedEntityName": "IL-OpenAI-POC-Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Third Part Data (IL-OpenAI-POC-Requests)",
+    "Name": "cr41e_ilopenaipocrequests_cr41e_thirdpartdata",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr41e_thirdpartdata",
+        "OptionSetReferenceEntityName": "IL-OpenAI-POC-Requests"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr41e_thirdpartdata",
+    "RelatedEntityName": "IL-OpenAI-POC-Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status of Request (IL-OpenAI-POC-Requests)",
+    "Name": "cr41e_ilopenaipocrequests_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "IL-OpenAI-POC-Requests"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "IL-OpenAI-POC-Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (IL-OpenAI-POC-Requests)",
+    "Name": "cr41e_ilopenaipocrequests_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "IL-OpenAI-POC-Requests"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "IL-OpenAI-POC-Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "IL-OpenAI-RequestStatus",
+    "Name": "cr41e_ilopenairequeststatus",
+    "OptionSetInfoNameMapping": {
+      "1": "Awaiting Service Line",
+      "10": "Awaiting EW Hub",
+      "11": "Awaiting UK&I",
+      "12": "Infosec Review Pending",
+      "13": "Risk Review Pending",
+      "14": "Completed",
+      "2": "Pending Review",
+      "3": "Ready for Implementation",
+      "4": "Passthru Provisioned",
+      "5": "Provisioned w/Review",
+      "6": "Post-Deployment Review",
+      "7": "Rejected",
+      "8": "Decommissioned",
+      "9": "Decommissioned Post-Rejection"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr41e_status",
+        "OptionSetReferenceEntityName": "IL-OpenAI-POC-Requests"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr41e_status",
+    "RelatedEntityName": "IL-OpenAI-POC-Requests",
+    "Type": "OptionSetInfo"
+  }
+]

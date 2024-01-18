@@ -1,0 +1,530 @@
+SL_UKIreland As screen:
+    Fill: =RGBA(34, 36, 46, 1)
+
+    Label3_9 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =24
+        Text: ="United Kingdom & Ireland Approvals"
+        Width: =609
+        X: =95
+        ZIndex: =1
+
+    "UKIrelandGal As gallery.'BrowseLayout_Vertical_OneImageThreeColumnVariant_ver5.0'":
+        BorderColor: =RGBA(255, 230, 0, 1)
+        DelayItemLoading: =true
+        Height: =630
+        Items: =If(tglPendReqFilterUki,Filter('IL-OpenAI-POC-Requests',"United Kingdom" in 'Leading Country'||"Ireland" in 'Leading Country',Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I',(Trim(txtSearchGalSLUKI.Text) in 'Project Name' Or Trim(txtSearchGalSLUKI.Text) in 'Project Owner')),Filter('IL-OpenAI-POC-Requests',"United Kingdom" in 'Leading Country'||"Ireland" in 'Leading Country',(Trim(txtSearchGalSLUKI.Text) in 'Project Name' Or Trim(txtSearchGalSLUKI.Text) in 'Project Owner')))
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =250
+        Width: =1244
+        WrapCount: =3
+        X: =95
+        Y: =102
+        ZIndex: =2
+
+        Rectangle1_24 As rectangle:
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(46, 46, 60, 1)
+            Height: =239
+            OnSelect: =Select(Parent)
+            Width: =400
+            X: =4
+            Y: =4
+            ZIndex: =1
+
+        Rectangle9_4 As rectangle:
+            Fill: =RGBA(116, 116, 128, 1)
+            Height: =60
+            OnSelect: =Select(Parent)
+            Width: =380
+            X: =14
+            Y: =174
+            ZIndex: =2
+
+        lblCardHeadingAdmin_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            FontWeight: =FontWeight.Semibold
+            Height: =37
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: =ThisItem.'Project Name'
+            Tooltip: =Self.Text
+            Width: =360
+            Wrap: =false
+            X: =10
+            Y: =8
+            ZIndex: =3
+
+        lblPocUkiGal As label:
+            Color: =RGBA(196, 196, 205, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: ="Request"
+            Width: =69
+            X: =12
+            Y: =52
+            ZIndex: =4
+
+        lblDtUkiGal As label:
+            Color: =RGBA(196, 196, 205, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: ="Date"
+            Width: =69
+            X: =12
+            Y: =112
+            ZIndex: =5
+
+        Label8_94 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            OnSelect: =Select(Parent)
+            Text: ="Infosec"
+            Width: =78
+            X: =15
+            Y: =197
+            ZIndex: =6
+
+        Label8_95 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            OnSelect: =Select(Parent)
+            Text: ="Risk"
+            Width: =50
+            X: =176
+            Y: =197
+            ZIndex: =7
+
+        Label8_96 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            OnSelect: =Select(Parent)
+            Text: ="DP"
+            Width: =50
+            X: =321
+            Y: =197
+            ZIndex: =8
+
+        lblPocUkiGalVal As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingLeft: =0
+            Size: =11
+            Text: =ThisItem.'Project Request Name'
+            Tooltip: =Self.Text
+            Width: =310
+            Wrap: =false
+            X: =87
+            Y: =lblPocUkiGal.Y
+            ZIndex: =9
+
+        lblOwnerUkiGal As label:
+            Color: =RGBA(196, 196, 205, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: ="Owner"
+            Width: =69
+            X: =12
+            Y: =82
+            ZIndex: =10
+
+        lblDtUkiGalVal As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingLeft: =0
+            Size: =11
+            Text: =ThisItem.'Created On'
+            Width: =255
+            X: =87
+            Y: =lblDtUkiGal.Y
+            ZIndex: =11
+
+        lblOwnerUkiGalVal As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            LineHeight: =1
+            OnSelect: =Select(Parent)
+            PaddingLeft: =0
+            Size: =11
+            Text: |-
+                =With({varowners:Split(ThisItem.'Project Owner',";")},Switch(CountA(varowners),0,"",1,First(varowners).Value,First(varowners).Value&", +"&CountA(varowners)-1))
+            Tooltip: =ThisItem.'Project Owner'
+            Width: =310
+            X: =87
+            Y: =lblOwnerUkiGal.Y
+            ZIndex: =12
+
+        lblStatusUkiGal As label:
+            Color: =RGBA(196, 196, 205, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: ="Status"
+            Width: =69
+            X: =12
+            Y: =142
+            ZIndex: =13
+
+        lblStatusUkiGalVal As label:
+            Color: =Switch(ThisItem.Status,'IL-OpenAI-RequestStatus'.'Ready for Implementation',RGBA(141,198,63,1),'IL-OpenAI-RequestStatus'.Rejected,RGBA(246,88,16,1),RGBA(255,165,0,1))
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingLeft: =0
+            Size: =11
+            Text: =ThisItem.Status
+            Width: =300
+            X: =87
+            Y: =lblStatusUkiGal.Y
+            ZIndex: =14
+
+        IconEditUKIrelandGal As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =24
+            Icon: =Icon.ChevronRight
+            OnSelect: =Set(varSelectedEntry,ThisItem.'IL-OpenAI-POC-Requests');Navigate(Edit_UKIreland)
+            Tooltip: ="View details"
+            Width: =24
+            X: =376
+            Y: =10
+            ZIndex: =15
+
+        Circle1_65 As circle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =2
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =22
+            OnSelect: =Select(Parent)
+            Width: =22
+            X: =190
+            Y: =182
+            ZIndex: =16
+
+        Circle1_66 As circle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =2
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =22
+            OnSelect: =Select(Parent)
+            Width: =22
+            X: =336
+            Y: =182
+            ZIndex: =17
+
+        Circle1_64 As circle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =2
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =22
+            OnSelect: =Select(Parent)
+            Width: =22
+            X: =43
+            Y: =182
+            ZIndex: =18
+
+        Circle1_68 As circle:
+            DisplayMode: =DisplayMode.View
+            Fill: =Switch(ThisItem.'Risk Approval','IL-OpenAI-Approvals'.'N/A',RGBA(241,244,249,100),'IL-OpenAI-Approvals'.'Pending Review',RGBA(255,230,0,1),'IL-OpenAI-Approvals'.Approved,RGBA(141,198,63,1),'IL-OpenAI-Approvals'.Rejected,RGBA(246,88,16,1),RGBA(214,214,214,100))
+            Height: =14
+            OnSelect: =Select(Parent)
+            Tooltip: =ThisItem.'Risk Approval'
+            Width: =14
+            X: =194
+            Y: =186
+            ZIndex: =19
+
+        Circle1_69 As circle:
+            DisplayMode: =DisplayMode.View
+            Fill: =Switch(ThisItem.'Data Protection Approval','IL-OpenAI-Approvals'.'N/A',RGBA(241,244,249,100),'IL-OpenAI-Approvals'.'Pending Review',RGBA(255,230,0,1),'IL-OpenAI-Approvals'.Approved,RGBA(141,198,63,1),'IL-OpenAI-Approvals'.Rejected,RGBA(246,88,16,1),RGBA(214,214,214,100))
+            Height: =14
+            OnSelect: =Select(Parent)
+            Tooltip: =ThisItem.'Data Protection Approval'
+            Width: =14
+            X: =340
+            Y: =186
+            ZIndex: =20
+
+        Circle1_67 As circle:
+            DisplayMode: =DisplayMode.View
+            Fill: =Switch(ThisItem.'InfoSec Approval','IL-OpenAI-Approvals'.'N/A',RGBA(241,244,249,100),'IL-OpenAI-Approvals'.'Pending Review',RGBA(255,230,0,1),'IL-OpenAI-Approvals'.Approved,RGBA(141,198,63,1),'IL-OpenAI-Approvals'.Rejected,RGBA(246,88,16,1),RGBA(214,214,214,100))
+            Height: =14
+            OnSelect: =Select(Parent)
+            Tooltip: =ThisItem.'InfoSec Approval'
+            Width: =14
+            X: =47
+            Y: =186
+            ZIndex: =21
+
+    Rectangle2_10 As rectangle:
+        Fill: =RGBA(46, 46, 56, 1)
+        Height: =768
+        Width: =64
+        ZIndex: =3
+
+    FaqBtn_13 As icon.QuestionMark:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =40
+        Icon: =Icon.QuestionMark
+        OnSelect: =Navigate(FAQ,ScreenTransition.Fade)
+        Visible: =false
+        Width: =40
+        X: =13
+        Y: =630
+        ZIndex: =4
+
+    UserAddBtn_13 As icon.AddUser:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =40
+        Icon: =Icon.AddUser
+        OnSelect: =If(loggedusergroup.Text="ADMIN",Navigate(UserMgmt),Notify( "Not enough permission", NotificationType.Warning, 4000 ))
+        Tooltip: ="User Management"
+        Visible: =If(Text(loggedusergroup)="ADMIN",true,false)
+        Width: =40
+        X: =13
+        Y: =704
+        ZIndex: =5
+
+    menuBtn_20 As icon.Hamburger:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =36
+        Icon: =Icon.Hamburger
+        OnSelect: =Set(SearchVis,true)
+        Visible: =false
+        Width: =36
+        X: =13
+        Y: =24
+        ZIndex: =6
+
+    tglPendReqFilterUki As toggleSwitch:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(255, 255, 255, 1)
+        Default: =true
+        FalseText: ="All Requests"
+        HandleFill: =RGBA(34, 36, 46, 1)
+        HoverBorderColor: =
+        TrueFill: =RGBA(255, 230, 0, 1)
+        TrueText: ="Pending UK & I"
+        Width: =195
+        X: =1130
+        Y: =21
+        ZIndex: =17
+
+    IconRefreshUki As icon.Add:
+        Color: =RGBA(255, 230, 0, 1)
+        FocusedBorderThickness: =0
+        Height: =30
+        Icon: =Icon.Reload
+        OnSelect: =Refresh('IL-OpenAI-POC-Requests');Reset(UKIrelandGal)
+        PaddingBottom: =1
+        PaddingLeft: =1
+        PaddingRight: =1
+        PaddingTop: =1
+        Tooltip: ="Refresh View"
+        Width: =30
+        X: =1073
+        Y: =tglPendReqFilterEw.Y+tglPendReqFilterEw.Height/2-Self.Height/2
+        ZIndex: =18
+
+    iconHelpUki As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =36
+        Icon: =Icon.Help
+        OnSelect: |-
+            =UpdateContext({ctxShowHelpDlg: true })
+        Tooltip: ="Open Help Information"
+        Width: =36
+        X: =13
+        Y: =If(IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.ADMIN),630,UserAddBtn_13.Y)
+        ZIndex: =19
+
+    lblSLUKIGalCount As label:
+        Align: =Align.Right
+        Color: =RGBA(219, 219, 219, 1)
+        DisplayMode: =DisplayMode.View
+        Height: =20
+        Italic: =true
+        PaddingRight: =0
+        Size: =10
+        Text: ="Showing "&UKIrelandGal.AllItemsCount&" result(s)"
+        Width: =200
+        X: =1130
+        Y: =76
+        ZIndex: =20
+
+    HomeMenu_4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =20
+
+        Rectangle1_12 As rectangle:
+            Fill: =RGBA(46, 46, 56, 1)
+            Height: =768
+            Visible: =If(SearchVis,true,false)
+            Width: =338
+            ZIndex: =7
+
+        menuBtnWidth_6 As icon.Hamburger:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =36
+            Icon: =Icon.Hamburger
+            OnSelect: =Set(SearchVis,false)
+            Visible: =If(SearchVis,true,false)
+            Width: =36
+            X: =13
+            Y: =24
+            ZIndex: =8
+
+        UserAddBtn_14 As icon.AddUser:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =40
+            Icon: =Icon.AddUser
+            OnSelect: =If(loggedusergroup.Text="ADMIN",Navigate(UserMgmt),Notify( "Not enough permission", NotificationType.Warning, 4000 ))
+            Tooltip: ="User Management"
+            Visible: =If(SearchVis,true,false)&&If(loggedusergroup.Text="ADMIN",true,false)
+            Width: =40
+            X: =13
+            Y: =704
+            ZIndex: =9
+
+        FaqBtn_14 As icon.QuestionMark:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =40
+            Icon: =Icon.QuestionMark
+            OnSelect: =Navigate(FAQ,ScreenTransition.Fade)
+            Visible: |-
+                =//If(SearchVis,true,false)
+                false
+            Width: =40
+            X: =13
+            Y: =630
+            ZIndex: =10
+
+        Label6_6 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Size: =18
+            Text: ="FAQ"
+            Visible: |-
+                =//If(SearchVis,true,false)
+                false
+            X: =84
+            Y: =630
+            ZIndex: =11
+
+        Label8_35 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Size: =18
+            Text: ="User Managment"
+            Visible: =If(SearchVis,true,false)&&If(loggedusergroup.Text="ADMIN",true,false)
+            Width: =237
+            X: =84
+            Y: =704
+            ZIndex: =12
+
+        faqBtnWide_10 As button:
+            BorderThickness: =20
+            Fill: =RGBA(46, 46, 56, 0)
+            HoverFill: |
+                =
+            OnSelect: =Navigate(FAQ,ScreenTransition.Fade)
+            PressedFill: =
+            Text: =""
+            Visible: |-
+                =//If(SearchVis,true,false)
+                false
+            Width: =308
+            X: =13
+            Y: =630
+            ZIndex: =13
+
+        userMgntBtnWide_6 As button:
+            Fill: =RGBA(0, 0, 0, 0)
+            HoverFill: =
+            OnSelect: =Navigate(UserMgmt,ScreenTransition.Fade)
+            PressedFill: =
+            Text: =""
+            Visible: =If(SearchVis,true,false)&&If(loggedusergroup.Text="ADMIN",true,false)
+            Width: =308
+            X: =13
+            Y: =704
+            ZIndex: =14
+
+        Label8_34 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Size: =18
+            Text: ="Admin Console"
+            Visible: =If(loggedusergroup.Text="ADMIN",true,false)&&If(SearchVis,true,false)
+            Width: =237
+            X: =84
+            Y: =562
+            ZIndex: =15
+
+        faqBtnWide_8 As button:
+            BorderThickness: =20
+            Fill: =RGBA(46, 46, 56, 0)
+            HoverFill: |
+                =
+            OnSelect: =Navigate(Admin_screen,ScreenTransition.Fade)
+            PressedFill: =
+            Text: =""
+            Visible: =If(loggedusergroup.Text="ADMIN",true,false)&&If(SearchVis,true,false)
+            Width: =308
+            X: =15
+            Y: =562
+            ZIndex: =16
+
+    txtSearchGalSLUKI As text:
+        BorderColor: =RGBA(202, 202, 202, 1)
+        BorderThickness: =1
+        Clear: =true
+        Color: =RGBA(255, 255, 255, 1)
+        Default: =""
+        Fill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =1
+        HintText: ="(Search by Project Name or Owner)"
+        HoverBorderColor: =Self.BorderColor
+        HoverColor: =RGBA(102, 102, 102, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PressedBorderColor: =Self.BorderColor
+        Size: =11
+        Tooltip: ="Search by Project Name or Owner"
+        X: =704
+        Y: =24
+        ZIndex: =21
+
+    CompGenAiHelp_Uki As CompGenAiHelp:
+        OnBtnMailClicked: |-
+            =Launch("mailto: eyfabric.openai@ey.com",{Subject:User().FullName&" || Requesting Help in Gen AI Power App Application",Cc:User().Email,Body:"Please write your concern here !"})
+        OnCloseIconClicked: |-
+            =UpdateContext({ctxShowHelpDlg: false })
+        Visible: =ctxShowHelpDlg
+        ZIndex: =22
+

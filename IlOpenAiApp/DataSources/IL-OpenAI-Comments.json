@@ -1,0 +1,100 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr41e_ilopenaicommentses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr41e_ilopenaicomments",
+    "MaxGetRowsCount": 2000,
+    "Name": "IL-OpenAI-Comments",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr41e_comment": "Comment",
+      "cr41e_commenteremail": "Commenter Email",
+      "cr41e_commentername": "Commenter Name",
+      "cr41e_ilopenaicomments_AsyncOperations": "System Jobs",
+      "cr41e_ilopenaicomments_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr41e_ilopenaicomments_DuplicateBaseRecord": "Duplicate Records (cr41e_ilopenaicomments_DuplicateBaseRecord)",
+      "cr41e_ilopenaicomments_DuplicateMatchingRecord": "Duplicate Records (cr41e_ilopenaicomments_DuplicateMatchingRecord)",
+      "cr41e_ilopenaicomments_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr41e_ilopenaicomments_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr41e_ilopenaicomments_ProcessSession": "Process Sessions",
+      "cr41e_ilopenaicomments_SyncErrors": "Sync Errors",
+      "cr41e_ilopenaicommentsid": "IL-OpenAI-Comments",
+      "cr41e_pocrequestid": "POC Request ID",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "IL-OpenAI-Comments",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "IL-OpenAI-Comments (Views)",
+    "Name": "_cr41e_ilopenaicomments_views",
+    "RelatedEntityName": "IL-OpenAI-Comments",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "70659360-bb63-467f-8d7c-4dc652b65506": "Active IL-OpenAI-Comments",
+      "76ad9af9-bfd9-400a-807f-2db2ba9e5980": "Inactive IL-OpenAI-Comments",
+      "7f5532ae-0f84-40b4-afc2-d296998975f6": "IL-OpenAI-Comments Associated View",
+      "86dabe02-6734-4869-93ef-b7c5b2abe035": "IL-OpenAI-Comments Advanced Find View",
+      "b52be8fd-d90d-4367-a913-4337d7508a84": "IL-OpenAI-Comments Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (IL-OpenAI-Comments)",
+    "Name": "cr41e_ilopenaicomments_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "IL-OpenAI-Comments"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "IL-OpenAI-Comments",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (IL-OpenAI-Comments)",
+    "Name": "cr41e_ilopenaicomments_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "IL-OpenAI-Comments"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "IL-OpenAI-Comments",
+    "Type": "OptionSetInfo"
+  }
+]

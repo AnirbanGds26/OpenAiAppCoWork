@@ -1,0 +1,58 @@
+FAQ As screen:
+    Fill: =RGBA(34, 36, 46, 1)
+
+    rectLeftNarrowPanelAd As rectangle:
+        Fill: =RGBA(46, 46, 56, 1)
+        Height: =768
+        Width: =64
+        ZIndex: =1
+
+    htmlAccessDenied As htmlViewer:
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Height: =250
+        HtmlText: |-
+            ="<div><p>Looks like you don't have access to this area of the application, at this moment.</p>
+            <p>If you believe you should have access, or need assistance, please contact <b>Bani Villarroel <font color='blue'><u>(<a title='Click here to open outlook' href='mailto:bani.villarroel@gds.ey.com?subject=Need Assistance in OpenAI for POC Approval Application || " & User().FullName & "&body=Type here.'>bani.villarroel@gds.ey.com</a>)</u></font></b> or reach out to us via email at <b><font color='blue'><u><a title='Click here to open outlook' href='mailto:eyfabric.openai@ey.com?subject=Need Assistance in OpenAI for POC Approval Application || " & User().FullName & "&body=Type here.' target='_blank'>EYFabric.OpenAI@ey.com</a></u></font></b>.</p>
+            <p>Thank you for considering OpenAI for POC Approval application, & we're here to <b>help you to get the access</b>.</p></div>"
+        Size: =15
+        Width: =1200
+        X: =lblHeaderAd.X
+        Y: =lblHeaderAd.Y+lblHeaderAd.Height+10
+        ZIndex: =3
+
+    lblHeaderAd As label:
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        FontWeight: =FontWeight.Bold
+        Height: =60
+        Size: =20
+        Text: ="Oops ! You do not have access"
+        Width: =900
+        X: =lblHeaderPageAd.X
+        Y: =lblHeaderPageAd.Y+lblHeaderPageAd.Height+120
+        ZIndex: =4
+
+    iconBackAd As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =36
+        Icon: =Icon.BackArrow
+        OnSelect: =If(IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.ADMIN),Navigate(Admin_screen),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.Tax),Navigate(SL_TAX),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.Assurance),Navigate(SL_ASSURANCE),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.Consulting),Navigate(SL_CONSULTING),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.'EW Hub'),Navigate(SL_EWHub),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.'UK&I'),Navigate(SL_UKIreland),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.'Data Protection') Or IsMatch(vvLoggedInUserGrp,"infosec",MatchOptions.Contains&MatchOptions.IgnoreCase) Or IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.Risk,MatchOptions.Contains&MatchOptions.IgnoreCase),Navigate(SL_DataClass))
+        Visible: =!IsBlankOrError(vvLoggedInUserGrp)
+        Width: =36
+        X: =13
+        Y: =24
+        ZIndex: =5
+
+    lblHeaderPageAd As label:
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =24
+        Text: ="Access Denied"
+        Width: =609
+        X: =94
+        Y: =40
+        ZIndex: =6
+

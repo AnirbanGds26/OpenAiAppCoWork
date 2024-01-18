@@ -1,0 +1,15 @@
+CompDialogBgCover As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =Max(App.Height,App.DesignHeight)
+    Width: =Max(App.Width,App.DesignWidth)
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    rectDialogBackGroundCover As rectangle:
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =CompDialogBgCover.Height
+        Width: =CompDialogBgCover.Width
+        ZIndex: =1
+

@@ -1,0 +1,43 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_cr41e_ilopenaiusers_forms",
+      "Namespace": "IL-OpenAI-Users (Forms)",
+      "Values": {
+        "Information": "33337fb6-6eb3-4a8c-8be3-abc137867cef"
+      }
+    },
+    {
+      "Kind": "default.cds_cr41e_ilopenaipocrequests_forms",
+      "Namespace": "IL-OpenAI-POC-Requests (Forms)",
+      "Values": {
+        "Information": "3e58dfb2-96a8-4eca-9b3d-f599a885e09d"
+      }
+    },
+    {
+      "Kind": "default.cds_cr41e_ilopenaicomments_forms",
+      "Namespace": "IL-OpenAI-Comments (Forms)",
+      "Values": {
+        "Information": "77686c42-f860-4b43-ae92-923ce284beb0"
+      }
+    },
+    {
+      "Kind": "default.cds_systemuser_forms",
+      "Namespace": "Users (Forms)",
+      "Values": {
+        "Application User": "d26924ef-4d80-46f7-ab1d-e6ae80a54ce8",
+        "Information": "094fb08a-77bb-49e0-b7ea-8dbddfd01294",
+        "User": "c2cd9e55-d4b4-4b55-9951-16ead79643e5",
+        "User form – Business": "c2413504-7eb2-4c59-a087-95d819866114",
+        "User Hierarchy Tile Form": "c68d6c09-d7a7-4959-8d0f-44b8cff9b452"
+      }
+    },
+    {
+      "Kind": "default.cds_cr41e_ilopenaisubservicelinemapping_forms",
+      "Namespace": "IL-OpenAI-SubServiceLineMappings (Forms)",
+      "Values": {
+        "Information": "472dfc74-04df-4360-b179-fabcad2d2610"
+      }
+    }
+  ]
+}

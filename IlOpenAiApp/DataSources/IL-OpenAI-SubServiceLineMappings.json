@@ -1,0 +1,95 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr41e_ilopenaisubservicelinemappings",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr41e_ilopenaisubservicelinemapping",
+    "Name": "IL-OpenAI-SubServiceLineMappings",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr41e_ilopenaisubservicelinemapping_AsyncOperations": "System Jobs",
+      "cr41e_ilopenaisubservicelinemapping_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr41e_ilopenaisubservicelinemapping_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr41e_ilopenaisubservicelinemapping_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr41e_ilopenaisubservicelinemapping_ProcessSession": "Process Sessions",
+      "cr41e_ilopenaisubservicelinemapping_SyncErrors": "Sync Errors",
+      "cr41e_ilopenaisubservicelinemappingid": "IL-OpenAI-SubServiceLineMapping",
+      "cr41e_serviceline": "Service Line",
+      "cr41e_subserviceline": "SubServiceLine",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "IL-OpenAI-SubServiceLineMappings",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "IL-OpenAI-SubServiceLineMappings (Views)",
+    "Name": "_cr41e_ilopenaisubservicelinemapping_views",
+    "RelatedEntityName": "IL-OpenAI-SubServiceLineMappings",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "3720b13c-8d01-4bf4-aa8b-d1ddda28ceba": "IL-OpenAI-SubServiceLineMapping Advanced Find View",
+      "498ece0e-6301-400c-bc27-b3225080d706": "IL-OpenAI-SubServiceLineMapping Lookup View",
+      "a9d4f295-f341-4d71-ad3c-dda50f6d1b18": "Active IL-OpenAI-SubServiceLineMappings",
+      "be5219f2-e609-45b3-bfcc-6eebf963503b": "Inactive IL-OpenAI-SubServiceLineMappings",
+      "ccdac406-7422-4a1f-ac7e-d598e0269041": "IL-OpenAI-SubServiceLineMapping Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (IL-OpenAI-SubServiceLineMappings)",
+    "Name": "cr41e_ilopenaisubservicelinemapping_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "IL-OpenAI-SubServiceLineMappings"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "IL-OpenAI-SubServiceLineMappings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (IL-OpenAI-SubServiceLineMappings)",
+    "Name": "cr41e_ilopenaisubservicelinemapping_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "IL-OpenAI-SubServiceLineMappings"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "IL-OpenAI-SubServiceLineMappings",
+    "Type": "OptionSetInfo"
+  }
+]

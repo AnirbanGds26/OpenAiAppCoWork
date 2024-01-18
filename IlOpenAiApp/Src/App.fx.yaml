@@ -1,0 +1,16 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =ClearCollect(AdminEnum,{SelectionType:"Tax"},{SelectionType:"Assurance"},{SelectionType:"Consulting"},{SelectionType:"EW Hub"},{SelectionType:"Data Classification"},{SelectionType:"UK & Ireland"});Set(varname2,Blank());Concurrent(ClearCollect(ccSubserviceLine,ShowColumns('IL-OpenAI-SubServiceLineMappings',"cr41e_serviceline","cr41e_subserviceline")),/** Get the access level of the logged in user*/
+        Set(vvLoggedInUserGrp,LookUp('IL-OpenAI-Users','User Email'=User().Email,'Access Group')));If(!IsBlank(Param("id")),Set(vvRecordId,Param("id")),Set(vvRecordId,Blank()))
+    StartScreen: |-
+        =With({varScr:Param("scr"),varAccessGrp:LookUp('IL-OpenAI-Users','User Email'=User().Email,'Access Group')},If(IsBlankOrError(varScr),If(varAccessGrp='IL-OpenAI-AccessGroups'.ADMIN,Admin_screen,varAccessGrp='IL-OpenAI-AccessGroups'.Tax,SL_TAX,varAccessGrp='IL-OpenAI-AccessGroups'.Assurance,SL_ASSURANCE,varAccessGrp='IL-OpenAI-AccessGroups'.Consulting,SL_CONSULTING,varAccessGrp='IL-OpenAI-AccessGroups'.'EW Hub',SL_EWHub,varAccessGrp='IL-OpenAI-AccessGroups'.'UK&I',SL_UKIreland,varAccessGrp='IL-OpenAI-AccessGroups'.'Data Protection' Or varAccessGrp='IL-OpenAI-AccessGroups'.Risk Or IsMatch(varAccessGrp,"infosec",MatchOptions.Contains&MatchOptions.IgnoreCase),SL_DataClass,FAQ),Switch(varScr,"slas",If(varAccessGrp='IL-OpenAI-AccessGroups'.Assurance,Edit_SL_ASSURANCE,FAQ),"sltx",If(varAccessGrp='IL-OpenAI-AccessGroups'.Tax,Edit_SL_TAX,FAQ),"slco",If(varAccessGrp='IL-OpenAI-AccessGroups'.Consulting,Edit_SL_CONSULTING,FAQ),"ewh",If(varAccessGrp='IL-OpenAI-AccessGroups'.'EW Hub',Edit_EWHub,FAQ),"uki",If(varAccessGrp='IL-OpenAI-AccessGroups'.'UK&I',Edit_UKIreland,FAQ),"dc",If(varAccessGrp='IL-OpenAI-AccessGroups'.'Data Protection' Or varAccessGrp='IL-OpenAI-AccessGroups'.Risk Or IsMatch(varAccessGrp,"infosec",MatchOptions.Contains&MatchOptions.IgnoreCase),Edit_DataClassification,FAQ),"adm",If(varAccessGrp='IL-OpenAI-AccessGroups'.ADMIN,Edit_Admin,FAQ))))
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

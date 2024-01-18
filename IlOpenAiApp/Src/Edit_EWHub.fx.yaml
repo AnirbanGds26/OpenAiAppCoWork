@@ -1,0 +1,1906 @@
+Edit_EWHub As screen:
+    Fill: =RGBA(34, 36, 46, 1)
+    OnHidden: |-
+        =Concurrent(Set(vvRecordId,Blank()),Set(varSelectedEntry,Blank()),UpdateContext({ctxApprovalStatus1:Blank(),ctxAuditHistoryTxt:Blank(),ctxShowAuditHistory: false }))
+    OnVisible: |-
+        =Reset(TextInput3_9);Reset(Gallery4_9);If(!IsBlank(vvRecordId),Set(varSelectedEntry,vvRecordId));With({withItem:LookUp('IL-OpenAI-POC-Requests','IL-OpenAI-POC-Requests'=GUID(varSelectedEntry))},UpdateContext({ctxApprovalStatus1:withItem.Status,ctxAuditHistoryTxt:withItem.'Audit History',ctxShowAuditHistory: false ,ctxShowAprvDlg: false ,ctxShowRejDlg: false }))
+
+    Rectangle2_19 As rectangle:
+        Fill: =RGBA(46, 46, 56, 1)
+        Height: =768
+        Width: =64
+        ZIndex: =1
+
+    editEWHubForm As form:
+        DataSource: ='IL-OpenAI-POC-Requests'
+        Height: =690
+        Item: =If(IsBlank(vvRecordId),EWHubGal.Selected,LookUp('IL-OpenAI-POC-Requests','IL-OpenAI-POC-Requests'=GUID(vvRecordId)))
+        NumberOfColumns: =1
+        Width: =769
+        X: =80
+        Y: =rectCommentSecEwhub.Y
+        ZIndex: =2
+
+        "'Project Name_DataCard1_7' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_projectname"
+            Default: =ThisItem.'Project Name'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_projectname")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'IL-OpenAI-POC-Requests'], DataSourceInfo.MaxLength, "cr41e_projectname")
+            Required: =false
+            Update: =DataCardValue3_7.Text
+            Width: =776
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey3_7 As label:
+                AutoHeight: =true
+                Color: =RGBA(237, 237, 237, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue3_7 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =ThisItem.'Project Name'
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey3_7.Y + DataCardKey3_7.Height + 5
+                ZIndex: =2
+
+            ErrorMessage2_7 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue3_7.Y + DataCardValue3_7.Height
+                ZIndex: =3
+
+            StarVisible2_7 As label:
+                Align: =Align.Center
+                Height: =DataCardKey3_7.Height
+                Text: ="*"
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey3_7.Y
+                ZIndex: =4
+
+        "'POC Request Name_DataCard2_7' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_pocrequestname"
+            Default: =ThisItem.'Project Request Name'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_pocrequestname")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'IL-OpenAI-POC-Requests'], DataSourceInfo.MaxLength, "cr41e_pocrequestname")
+            Required: =true
+            Update: =DataCardValue4_7.Text
+            Width: =776
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey4_7 As label:
+                AutoHeight: =true
+                Color: =RGBA(237, 237, 237, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue4_7 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey4_7.Y + DataCardKey4_7.Height + 5
+                ZIndex: =2
+
+            ErrorMessage3_7 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue4_7.Y + DataCardValue4_7.Height
+                ZIndex: =3
+
+            StarVisible3_7 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =DataCardKey4_7.Height
+                Text: ="*"
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey4_7.Y
+                ZIndex: =4
+
+        "'Project Owner_DataCard1_7' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_projectowner"
+            Default: =ThisItem.'Project Owner'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_projectowner")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'IL-OpenAI-POC-Requests'], DataSourceInfo.MaxLength, "cr41e_projectowner")
+            Required: =true
+            Update: =DataCardValue7_7.Text
+            Width: =776
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey7_7 As label:
+                AutoHeight: =true
+                Color: =RGBA(237, 237, 237, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue7_7 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey7_7.Y + DataCardKey7_7.Height + 5
+                ZIndex: =2
+
+            ErrorMessage6_7 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue7_7.Y + DataCardValue7_7.Height
+                ZIndex: =3
+
+            StarVisible6_7 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =DataCardKey7_7.Height
+                Text: ="*"
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey7_7.Y
+                ZIndex: =4
+
+        "'POC intended use case_DataCard1_7' As typedDataCard.textualMultiLineEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_pocintendedusecase"
+            Default: =ThisItem.'Project Intended Use Case'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_pocintendedusecase")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =126
+            Required: =true
+            Update: =DataCardValue5_7.Text
+            Width: =776
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey5_7 As label:
+                AutoHeight: =true
+                Color: =RGBA(237, 237, 237, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue5_7 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                Height: =108
+                Mode: =TextMode.MultiLine
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey5_7.Y + DataCardKey5_7.Height + 5
+                ZIndex: =2
+
+            ErrorMessage4_7 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue5_7.Y + DataCardValue5_7.Height
+                ZIndex: =3
+
+            StarVisible4_7 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =DataCardKey5_7.Height
+                Text: ="*"
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey5_7.Y
+                ZIndex: =4
+
+        "'POC brief description_DataCard1_7' As typedDataCard.textualMultiLineEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_pocbriefdescription"
+            Default: =ThisItem.'Project Brief Description'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_pocbriefdescription")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue6_7.Text
+            Width: =776
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey6_7 As label:
+                AutoHeight: =true
+                Color: =RGBA(237, 237, 237, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue6_7 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                Height: =80
+                Mode: =TextMode.MultiLine
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey6_7.Y + DataCardKey6_7.Height + 5
+                ZIndex: =2
+
+            ErrorMessage5_7 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue6_7.Y + DataCardValue6_7.Height
+                ZIndex: =3
+
+            StarVisible5_7 As label:
+                Align: =Align.Center
+                Height: =DataCardKey6_7.Height
+                Text: ="*"
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey6_7.Y
+                ZIndex: =4
+
+        "'Data Classification_DataCard1_7' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_dataclassification"
+            Default: =ThisItem.'Data Classification'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_dataclassification")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'IL-OpenAI-POC-Requests'], DataSourceInfo.MaxLength, "cr41e_dataclassification")
+            Required: =false
+            Update: =DataCardValue8_7.Text
+            Width: =776
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            DataCardKey8_7 As label:
+                AutoHeight: =true
+                Color: =RGBA(237, 237, 237, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue8_7 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey8_7.Y + DataCardKey8_7.Height + 5
+                ZIndex: =2
+
+            ErrorMessage7_7 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue8_7.Y + DataCardValue8_7.Height
+                ZIndex: =3
+
+            StarVisible7_7 As label:
+                Align: =Align.Center
+                Height: =DataCardKey8_7.Height
+                Text: ="*"
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey8_7.Y
+                ZIndex: =4
+
+        "'Data description_DataCard1_7' As typedDataCard.textualMultiLineEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_datadescription"
+            Default: =ThisItem.'Data Description'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_datadescription")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =116
+            Required: =true
+            Update: =DataCardValue10_7.Text
+            Width: =776
+            X: =0
+            Y: =6
+            ZIndex: =1
+
+            DataCardKey10_7 As label:
+                AutoHeight: =true
+                Color: =RGBA(237, 237, 237, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue10_7 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                Height: =90
+                Mode: =TextMode.MultiLine
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey10_7.Y + DataCardKey10_7.Height + 5
+                ZIndex: =2
+
+            ErrorMessage9_7 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue10_7.Y + DataCardValue10_7.Height
+                ZIndex: =3
+
+            StarVisible9_7 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =DataCardKey10_7.Height
+                Text: ="*"
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey10_7.Y
+                ZIndex: =4
+
+        "'Retention period_DataCard1_7' As typedDataCard.textualMultiLineEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_retentionperiod"
+            Default: =ThisItem.'Retention Period'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_retentionperiod")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =DataCardValue11_7.Text
+            Width: =776
+            X: =0
+            Y: =7
+            ZIndex: =1
+
+            DataCardKey11_7 As label:
+                AutoHeight: =true
+                Color: =RGBA(237, 237, 237, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue11_7 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                Height: =80
+                Mode: =TextMode.MultiLine
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey11_7.Y + DataCardKey11_7.Height + 5
+                ZIndex: =2
+
+            ErrorMessage10_7 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue11_7.Y + DataCardValue11_7.Height
+                ZIndex: =3
+
+            StarVisible10_7 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =DataCardKey11_7.Height
+                Text: ="*"
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey11_7.Y
+                ZIndex: =4
+
+        "'Client Consent_DataCard1_7' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_clientconsent"
+            Default: =ThisItem.'Client Consent'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_clientconsent")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'IL-OpenAI-POC-Requests'], DataSourceInfo.MaxLength, "cr41e_clientconsent")
+            Required: =false
+            Update: =DataCardValue12_7.Text
+            Width: =776
+            X: =0
+            Y: =8
+            ZIndex: =1
+
+            DataCardKey12_7 As label:
+                AutoHeight: =true
+                Color: =RGBA(237, 237, 237, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue12_7 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey12_7.Y + DataCardKey12_7.Height + 5
+                ZIndex: =2
+
+            ErrorMessage11_7 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue12_7.Y + DataCardValue12_7.Height
+                ZIndex: =3
+
+            StarVisible11_7 As label:
+                Align: =Align.Center
+                Height: =DataCardKey12_7.Height
+                Text: ="*"
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey12_7.Y
+                ZIndex: =4
+
+        "'Leading Country_DataCard1_7' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_leadingcountry"
+            Default: =ThisItem.'Leading Country'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_leadingcountry")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'IL-OpenAI-POC-Requests'], DataSourceInfo.MaxLength, "cr41e_leadingcountry")
+            Required: =false
+            Update: =DataCardValue13_7.Text
+            Width: =776
+            X: =0
+            Y: =9
+            ZIndex: =1
+
+            DataCardKey13_7 As label:
+                AutoHeight: =true
+                Color: =RGBA(237, 237, 237, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue13_7 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey13_7.Y + DataCardKey13_7.Height + 5
+                ZIndex: =2
+
+            ErrorMessage12_7 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue13_7.Y + DataCardValue13_7.Height
+                ZIndex: =3
+
+            StarVisible12_7 As label:
+                Align: =Align.Center
+                Height: =DataCardKey13_7.Height
+                Text: ="*"
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey13_7.Y
+                ZIndex: =4
+
+        "'Project Sponsor_DataCard1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_projectsponsor"
+            Default: =ThisItem.'Project Sponsor'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_projectsponsor")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'IL-OpenAI-POC-Requests'], DataSourceInfo.MaxLength, "cr41e_projectsponsor")
+            Required: =true
+            Update: =DataCardValue1.Text
+            Width: =776
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            DataCardKey1 As label:
+                AutoHeight: =true
+                Color: =RGBA(237, 237, 237, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey1.Y + DataCardKey1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue1.Y + DataCardValue1.Height
+                ZIndex: =3
+
+            StarVisible1 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =DataCardKey1.Height
+                Text: ="*"
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey1.Y
+                ZIndex: =4
+
+        "'Service Line_DataCard6' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_serviceline"
+            Default: =ThisItem.'Service Line'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_serviceline")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'IL-OpenAI-POC-Requests'], DataSourceInfo.MaxLength, "cr41e_serviceline")
+            Required: =false
+            Update: =DataCardValue66.Text
+            Width: =769
+            X: =0
+            Y: =11
+            ZIndex: =1
+
+            DataCardKey66 As label:
+                AutoHeight: =true
+                Color: =RGBA(237, 237, 237, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue66 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey66.Y + DataCardKey66.Height + 5
+                ZIndex: =2
+
+            ErrorMessage63 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue66.Y + DataCardValue66.Height
+                ZIndex: =3
+
+            StarVisible63 As label:
+                Align: =Align.Center
+                Height: =DataCardKey66.Height
+                Text: ="*"
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey66.Y
+                ZIndex: =4
+
+        "'Service Line (Other)_DataCard6' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_servicelineother"
+            Default: =ThisItem.'Service Line (Other)'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_servicelineother")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'IL-OpenAI-POC-Requests'], DataSourceInfo.MaxLength, "cr41e_servicelineother")
+            Required: =false
+            Update: =DataCardValue67.Text
+            Width: =769
+            X: =0
+            Y: =12
+            ZIndex: =1
+
+            DataCardKey67 As label:
+                AutoHeight: =true
+                Color: =RGBA(237, 237, 237, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue67 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey67.Y + DataCardKey67.Height + 5
+                ZIndex: =2
+
+            ErrorMessage64 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue67.Y + DataCardValue67.Height
+                ZIndex: =3
+
+            StarVisible64 As label:
+                Align: =Align.Center
+                Height: =DataCardKey67.Height
+                Text: ="*"
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey67.Y
+                ZIndex: =4
+
+        "'Sub Service Line_DataCard6' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_subserviceline"
+            Default: =ThisItem.'Sub Service Line'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_subserviceline")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'IL-OpenAI-POC-Requests'], DataSourceInfo.MaxLength, "cr41e_subserviceline")
+            Required: =false
+            Update: =DataCardValue68.Text
+            Width: =769
+            X: =0
+            Y: =13
+            ZIndex: =1
+
+            DataCardKey68 As label:
+                AutoHeight: =true
+                Color: =RGBA(237, 237, 237, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue68 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey68.Y + DataCardKey68.Height + 5
+                ZIndex: =2
+
+            ErrorMessage65 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue68.Y + DataCardValue68.Height
+                ZIndex: =3
+
+            StarVisible65 As label:
+                Align: =Align.Center
+                Height: =DataCardKey68.Height
+                Text: ="*"
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey68.Y
+                ZIndex: =4
+
+        Environments_DataCard5 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_environments"
+            Default: =ThisItem.Environments
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_environments")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'IL-OpenAI-POC-Requests'], DataSourceInfo.MaxLength, "cr41e_environments")
+            Required: =false
+            Update: =DataCardValue36.Text
+            Width: =769
+            X: =0
+            Y: =14
+            ZIndex: =1
+
+            DataCardKey100 As label:
+                AutoHeight: =true
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue36 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey100.Y + DataCardKey100.Height + 5
+                ZIndex: =2
+
+            ErrorMessage99 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue36.Y + DataCardValue36.Height
+                ZIndex: =3
+
+            StarVisible100 As label:
+                Align: =Align.Center
+                Height: =DataCardKey100.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey100.Y
+                ZIndex: =4
+
+        "'Data Type_DataCard1_7' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_datatype"
+            Default: =ThisItem.'Data Type'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_datatype")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'IL-OpenAI-POC-Requests'], DataSourceInfo.MaxLength, "cr41e_datatype")
+            Required: =false
+            Update: =EW_DataType_DataCardValue.Text
+            Width: =776
+            X: =0
+            Y: =15
+            ZIndex: =1
+
+            DataCardKey9_7 As label:
+                AutoHeight: =true
+                Color: =RGBA(237, 237, 237, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            EW_DataType_DataCardValue As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey9_7.Y + DataCardKey9_7.Height + 5
+                ZIndex: =2
+
+            ErrorMessage8_7 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =EW_DataType_DataCardValue.Y + EW_DataType_DataCardValue.Height
+                ZIndex: =3
+
+            StarVisible8_7 As label:
+                Align: =Align.Center
+                Height: =DataCardKey9_7.Height
+                Text: ="*"
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey9_7.Y
+                ZIndex: =4
+
+        "'Client Information Source_DataCard5' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_clientinformationsource"
+            Default: =ThisItem.'Client Information Source'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_clientinformationsource")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'IL-OpenAI-POC-Requests'], DataSourceInfo.MaxLength, "cr41e_clientinformationsource")
+            Required: =false
+            Update: =EW_ClientInformationSource_DataCardValue.Text
+            Visible: =If(Lower(EW_DataType_DataCardValue.Text) = "client information",true,false)
+            Width: =769
+            X: =0
+            Y: =16
+            ZIndex: =1
+
+            DataCardKey101 As label:
+                AutoHeight: =true
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            EW_ClientInformationSource_DataCardValue As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey101.Y + DataCardKey101.Height + 5
+                ZIndex: =2
+
+            ErrorMessage100 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =EW_ClientInformationSource_DataCardValue.Y + EW_ClientInformationSource_DataCardValue.Height
+                ZIndex: =3
+
+            StarVisible101 As label:
+                Align: =Align.Center
+                Height: =DataCardKey101.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey101.Y
+                ZIndex: =4
+
+        "'GIS Check for UK Restrictions_DataCard5' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_gischeckforuk"
+            Default: =ThisItem.'GIS Check for UK Restrictions'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_gischeckforuk")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'IL-OpenAI-POC-Requests'], DataSourceInfo.MaxLength, "cr41e_gischeckforuk")
+            Required: =false
+            Update: =EW_GISCheckforUKRestrictions_DataCardValue.Text
+            Visible: =If(Lower(EW_ClientInformationSource_DataCardValue.Text) = "yes",true,false)
+            Width: =769
+            X: =0
+            Y: =17
+            ZIndex: =1
+
+            DataCardKey102 As label:
+                AutoHeight: =true
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            EW_GISCheckforUKRestrictions_DataCardValue As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey102.Y + DataCardKey102.Height + 5
+                ZIndex: =2
+
+            ErrorMessage101 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =EW_GISCheckforUKRestrictions_DataCardValue.Y + EW_GISCheckforUKRestrictions_DataCardValue.Height
+                ZIndex: =3
+
+            StarVisible102 As label:
+                Align: =Align.Center
+                Height: =DataCardKey102.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey102.Y
+                ZIndex: =4
+
+        "'UK Audit Client Attestation_DataCard5' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr41e_ukauditclientattest"
+            Default: =ThisItem.'UK Audit Client Attestation'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_ukauditclientattest")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'IL-OpenAI-POC-Requests'], DataSourceInfo.MaxLength, "cr41e_ukauditclientattest")
+            Required: =false
+            Update: =DataCardValue85.Text
+            Visible: =If(Lower(EW_GISCheckforUKRestrictions_DataCardValue.Text) = "yes",true,false)
+            Width: =769
+            X: =0
+            Y: =18
+            ZIndex: =1
+
+            DataCardKey103 As label:
+                AutoHeight: =true
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue85 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledColor: =RGBA(51, 51, 51, 1)
+                DisplayMode: =DisplayMode.Disabled
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey103.Y + DataCardKey103.Height + 5
+                ZIndex: =2
+
+            ErrorMessage102 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue85.Y + DataCardValue85.Height
+                ZIndex: =3
+
+            StarVisible103 As label:
+                Align: =Align.Center
+                Height: =DataCardKey103.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey103.Y
+                ZIndex: =4
+
+    Icon2_11 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =36
+        Icon: =Icon.BackArrow
+        OnSelect: =If(IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.ADMIN),Navigate(Admin_screen),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.Tax),Navigate(SL_TAX),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.Assurance),Navigate(SL_ASSURANCE),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.Consulting),Navigate(SL_CONSULTING),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.'EW Hub'),Navigate(SL_EWHub),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.'UK&I'),Navigate(SL_UKIreland),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.'Data Protection') Or IsMatch(vvLoggedInUserGrp,"infosec",MatchOptions.Contains&MatchOptions.IgnoreCase) Or IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.Risk,MatchOptions.Contains&MatchOptions.IgnoreCase),Navigate(SL_DataClass))
+        Width: =36
+        X: =14
+        Y: =18
+        ZIndex: =3
+
+    btnSaveEwh As button:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =0
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(255, 230, 0, 1)
+        FocusedBorderThickness: =0
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =
+        OnSelect: =SubmitForm(editEWHubForm);Notify("Request is saved!",NotificationType.Success,2000)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Save"
+        Visible: =false
+        Width: =110
+        X: =979
+        Y: =712
+        ZIndex: =4
+
+    btnApproveEwh As button:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =0
+        Fill: =RGBA(22, 135, 54, 1)
+        FocusedBorderThickness: =0
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =
+        OnSelect: |-
+            =UpdateContext({ctxShowAprvDlg:true})
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Approve"
+        Visible: |
+            =If(ctxApprovalStatus1='IL-OpenAI-RequestStatus'.'Awaiting EW Hub', true , false )
+        Width: =110
+        X: =1104
+        Y: =712
+        ZIndex: =5
+
+    btnRejEwh As button:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =0
+        Fill: =RGBA(185, 37, 28, 1)
+        FocusedBorderThickness: =0
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =
+        OnSelect: |-
+            =UpdateContext({ctxShowRejDlg:true})
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Reject"
+        Visible: =If(ctxApprovalStatus1='IL-OpenAI-RequestStatus'.'Awaiting EW Hub', true , false )
+        Width: =110
+        X: =1228
+        Y: =712
+        ZIndex: =6
+
+    rectCommentSecEwhub As rectangle:
+        Fill: =RGBA(246, 246, 250, 1)
+        FocusedBorderThickness: =0
+        Height: =623
+        Width: =484
+        X: =862
+        Y: =54
+        ZIndex: =7
+
+    "Gallery4_9 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =424
+        Items: =SortByColumns(Filter('IL-OpenAI-Comments','POC Request ID'=Text(varSelectedEntry)),"createdon",SortOrder.Descending)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        Selectable: =false
+        TemplatePadding: =0
+        TemplateSize: =95
+        Width: =461
+        X: =873
+        Y: =113
+        ZIndex: =8
+
+        Title2_27 As label:
+            Color: =RGBA(116, 116, 128, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =17
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.'Commenter Name'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =250
+            X: =51
+            Y: =18
+            ZIndex: =2
+
+        Title2_29 As label:
+            Align: =Align.Justify
+            Color: =RGBA(0, 0, 0, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(234, 234, 242, 1)
+            Height: =58
+            OnSelect: =Select(Parent)
+            Overflow: =Overflow.Scroll
+            PaddingLeft: =10
+            PaddingRight: =10
+            Text: =ThisItem.Comment
+            Tooltip: =ThisItem.Comment
+            Width: =375
+            X: =51
+            Y: =36
+            ZIndex: =3
+
+        Title2_28 As label:
+            Align: =Align.Right
+            Color: =RGBA(116, 116, 128, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =Title2_27.Height
+            Italic: =true
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =Text(ThisItem.'Created On',"dd-mmm-yyyy")
+            Width: =139
+            X: =288
+            Y: =Title2_27.Y
+            ZIndex: =4
+
+        Rectangle3_9 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =0
+            OnSelect: =Select(Parent)
+            Width: =401
+            X: =15
+            Y: =94
+            ZIndex: =5
+
+        iconDelComntEwh As icon.Trash:
+            Color: =RGBA(116, 116, 128, 1)
+            Height: =24
+            Icon: =Icon.Trash
+            OnSelect: =Remove('IL-OpenAI-Comments',ThisItem)
+            Visible: =If(ctxApprovalStatus1<>'IL-OpenAI-RequestStatus'.'Ready for Implementation' And ThisItem.'Commenter Email'=User().Email, true , false )
+            Width: =24
+            X: =427
+            Y: =53
+            ZIndex: =6
+
+        Image2_9 As image:
+            Height: =36
+            Image: =If(Not(Gallery4_9.AllItemsCount=0),Office365Users.UserPhoto(ThisItem.'Commenter Email'))
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =100
+            RadiusBottomRight: =100
+            RadiusTopLeft: =100
+            RadiusTopRight: =100
+            Width: =36
+            X: =9
+            Y: =42
+            ZIndex: =7
+
+    TextInput3_9 As text:
+        BorderThickness: =0.5
+        Default: =""
+        FocusedBorderThickness: =0.5
+        Height: =73
+        HintText: ="Add comment here"
+        HoverFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =429
+        X: =891
+        Y: =579
+        ZIndex: =9
+
+    Icon2_3 As icon.Send:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =36
+        Icon: =Icon.Send
+        OnSelect: |-
+            =If(IsBlank(Trim(TextInput3_9.Text)),Notify("Comment can not be empty !",NotificationType.Warning,3000),Patch('IL-OpenAI-Comments',Defaults('IL-OpenAI-Comments'),{Comment:TextInput3_9.Text,'Commenter Email':loggeduseremail.Text,'POC Request ID':varSelectedEntry,'Commenter Name':loggedusername.Text});Reset(TextInput3_9))
+        Width: =36
+        X: =1272
+        Y: =597
+        ZIndex: =10
+
+    Label11_3 As label:
+        Height: =50
+        Size: =15
+        Text: ="Comment Section"
+        Width: =473
+        X: =873
+        Y: =56
+        ZIndex: =11
+
+    Rectangle13_3 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =1
+        Width: =459
+        X: =875
+        Y: =95
+        ZIndex: =12
+
+    rectHeaderSlEw As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(202, 202, 202, 1)
+        Height: =1
+        Width: =760
+        X: =lblHeaderSlEw.X+5
+        Y: =lblHeaderSlEw.Y+lblHeaderSlEw.Height+3
+        ZIndex: =13
+
+    lblHeaderStatusSlEw As label:
+        Align: =Align.Right
+        Color: =Switch(ctxApprovalStatus1,'IL-OpenAI-RequestStatus'.'Ready for Implementation',RGBA(141,198,63,1),'IL-OpenAI-RequestStatus'.Rejected,RGBA(246,88,16,1),RGBA(255,165,0,1))
+        DisplayMode: =DisplayMode.View
+        Height: =lblHeaderSlEw.Height
+        Italic: =true
+        Text: |-
+            ="Status: "&ctxApprovalStatus1
+        Width: =305
+        X: =lblHeaderSlEw.X+lblHeaderSlEw.Width+5
+        Y: =lblHeaderSlEw.Y
+        ZIndex: =14
+
+    lblHeaderSlEw As label:
+        Color: =RGBA(219, 219, 219, 1)
+        DisplayMode: =DisplayMode.View
+        FontWeight: =FontWeight.Bold
+        Height: =30
+        Size: =18
+        Text: ="Details - EW Hub"
+        Width: =455
+        X: =editEWHubForm.X
+        Y: =15
+        ZIndex: =15
+
+    grpBtnHistEw As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =28
+
+        icnHistEw As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            FocusedBorderThickness: =0
+            Height: =19
+            Icon: =Icon.History
+            Tooltip: ="Audit History"
+            Visible: =If(IsBlank(ctxAuditHistoryTxt), false , true )
+            Width: =19
+            X: =btnHistEw.X+btnHistEw.Width-21
+            Y: =btnHistEw.Y+btnHistEw.Height/2-Self.Height/2
+            ZIndex: =16
+
+        btnHistEw As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Color: =RGBA(255, 230, 0, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Normal
+            Height: =24
+            HoverColor: =Self.Color
+            HoverFill: =Self.Fill
+            OnSelect: |-
+                =UpdateContext({ctxShowAuditHistory:true})
+            PaddingTop: =3
+            PressedColor: =Self.Color
+            PressedFill: =Self.Fill
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
+            Text: ="Open History"
+            Tooltip: ="Click to open Audit History"
+            Visible: =If(IsBlank(ctxAuditHistoryTxt), false , true )
+            Width: =141
+            X: =1205
+            Y: =16
+            ZIndex: =17
+
+    grpPanelHistEw As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =29
+
+        rectBgHistEw As rectangle:
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(0, 0, 0, 0.4)
+            Height: =Max(App.Height,App.DesignHeight)
+            Visible: =ctxShowAuditHistory
+            Width: =Max(App.Width,App.DesignWidth)
+            ZIndex: =18
+
+        rectPanelHistEw As rectangle:
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(128, 128, 128, 1)
+            Height: =rectCommentSecEwhub.Height
+            Visible: =ctxShowAuditHistory
+            Width: =rectCommentSecEwhub.Width
+            X: =rectCommentSecEwhub.X
+            Y: =rectCommentSecEwhub.Y
+            ZIndex: =19
+
+        lblPanelHistEw As label:
+            Color: =RGBA(255, 230, 0, 1)
+            DisplayMode: =DisplayMode.View
+            FontWeight: =FontWeight.Semibold
+            PaddingLeft: =10
+            Size: =14
+            Text: ="Audit History"
+            Underline: =true
+            Visible: =ctxShowAuditHistory
+            Width: =rectPanelHistEw.Width-70
+            X: =rectPanelHistEw.X
+            Y: =rectPanelHistEw.Y+5
+            ZIndex: =20
+
+        icnClsHistEw As icon.Add:
+            Color: =RGBA(255, 230, 0, 1)
+            FocusedBorderThickness: =0
+            Height: =40
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =UpdateContext({ctxShowAuditHistory:false})
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            Tooltip: ="Close"
+            Visible: =ctxShowAuditHistory
+            Width: =40
+            X: =rectPanelHistEw.X+rectPanelHistEw.Width-Self.Width-5
+            Y: =rectPanelHistEw.Y+5
+            ZIndex: =21
+
+        glHistSlEw As gallery.variableTemplateHeightGallery:
+            BorderColor: =RGBA(116, 116, 116, 1)
+            BorderThickness: =1
+            DelayItemLoading: =true
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =rectPanelHistEw.Height-icnClsHistEw.Height-20
+            Items: =Split(ctxAuditHistoryTxt,"<br>")
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =60
+            Visible: =ctxShowAuditHistory
+            Width: =rectPanelHistEw.Width-10
+            X: =rectPanelHistEw.X+5
+            Y: =rectPanelHistEw.Y+icnClsHistEw.Height+15
+            ZIndex: =22
+
+            rectSepaGlEw As rectangle:
+                Fill: =RGBA(166, 166, 166, 1)
+                Height: =0.5
+                OnSelect: =Select(Parent)
+                Width: =lblGlHistEw.Width-4
+                X: =lblGlHistEw.X+4
+                Y: =lblGlHistEw.Y+lblGlHistEw.Height+1
+                ZIndex: =1
+
+            lblGlHistEw As label:
+                AutoHeight: =true
+                Height: =30
+                OnSelect: =Select(Parent)
+                PaddingLeft: =10
+                Size: =11
+                Text: =ThisItem.Value
+                Width: =Parent.Width-25
+                Y: =5
+                ZIndex: =2
+
+    rejectPopEW As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =34
+
+        CompDialogBgCover_Ewh2 As CompDialogBgCover:
+            Visible: =ctxShowRejDlg
+            ZIndex: =24
+
+        Rectangle4_2 As rectangle:
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =1
+            Fill: =RGBA(18, 19, 33, 1)
+            Height: =358
+            Visible: =ctxShowRejDlg
+            Width: =639
+            X: =CompDialogBgCover_Ewh2.X+CompDialogBgCover_Ewh2.Width/2-Self.Width/2
+            Y: =CompDialogBgCover_Ewh2.Y+CompDialogBgCover_Ewh2.Height/2-Self.Height/2
+            ZIndex: =25
+
+        Label9_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =85
+            Size: =16
+            Text: ="Are you sure to Reject the request?"
+            Visible: =ctxShowRejDlg
+            Width: =639
+            X: =363
+            Y: =205
+            ZIndex: =26
+
+        ConfYesBtn_2 As button:
+            BorderThickness: =0
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 230, 0, 1)
+            FocusedBorderThickness: =0
+            Height: =45
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =ColorFade(RGBA(255, 230, 0, 100), -20%)
+            OnSelect: |-
+                =If(EWHubApprovalV3.Run(varSelectedEntry,"Reject",User().FullName).message="success",Notify("Request has been Rejected!",NotificationType.Success,2000);Refresh('IL-OpenAI-POC-Requests');UpdateContext({ctxApprovalStatus1:LookUp('IL-OpenAI-POC-Requests','IL-OpenAI-POC-Requests'=GUID(varSelectedEntry)).Status,ctxShowRejDlg: false });Navigate(SL_EWHub,ScreenTransition.None))
+            Size: =14
+            Text: ="YES"
+            Visible: =ctxShowRejDlg
+            Width: =155
+            X: =523
+            Y: =421
+            ZIndex: =27
+
+        ConfNoBtn_2 As button:
+            BorderThickness: =0
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 230, 0, 1)
+            FocusedBorderThickness: =0
+            Height: =45
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =ColorFade(RGBA(255, 230, 0, 100), -20%)
+            OnSelect: |-
+                =UpdateContext({ctxShowRejDlg:false})
+            Size: =14
+            Text: ="NO"
+            Visible: =ctxShowRejDlg
+            Width: =155
+            X: =705
+            Y: =421
+            ZIndex: =28
+
+    approvePopEW As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =35
+
+        CompDialogBgCover_Ewh1 As CompDialogBgCover:
+            Visible: =ctxShowAprvDlg
+            ZIndex: =23
+
+        Rectangle4_7 As rectangle:
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =1
+            Fill: =RGBA(18, 19, 33, 1)
+            Height: =358
+            Visible: =ctxShowAprvDlg
+            Width: =639
+            X: =CompDialogBgCover_Ewh1.X+CompDialogBgCover_Ewh1.Width/2-Self.Width/2
+            Y: =CompDialogBgCover_Ewh1.Y+CompDialogBgCover_Ewh1.Height/2-Self.Height/2
+            ZIndex: =29
+
+        Label9_7 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =85
+            Size: =16
+            Text: ="Are you sure to Approve the request?"
+            Visible: =ctxShowAprvDlg
+            Width: =639
+            X: =363
+            Y: =205
+            ZIndex: =30
+
+        ConfYesBtn_7 As button:
+            BorderThickness: =0
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 230, 0, 1)
+            FocusedBorderThickness: =0
+            Height: =45
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =ColorFade(RGBA(255, 230, 0, 100), -20%)
+            OnSelect: |-
+                =If(EWHubApprovalV3.Run(varSelectedEntry,"Approve",User().FullName).message="success",Notify("Request has been Approved successfully!",NotificationType.Success,2000);Refresh('IL-OpenAI-POC-Requests');UpdateContext({ctxApprovalStatus1:LookUp('IL-OpenAI-POC-Requests','IL-OpenAI-POC-Requests'=GUID(varSelectedEntry)).Status,ctxShowAprvDlg: false });Navigate(SL_EWHub,ScreenTransition.None))
+            Size: =14
+            Text: ="YES"
+            Visible: =ctxShowAprvDlg
+            Width: =155
+            X: =529
+            Y: =434
+            ZIndex: =31
+
+        ConfNoBtn_7 As button:
+            BorderThickness: =0
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 230, 0, 1)
+            FocusedBorderThickness: =0
+            Height: =45
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =ColorFade(RGBA(255, 230, 0, 100), -20%)
+            OnSelect: |-
+                =UpdateContext({ctxShowAprvDlg:false})
+            Size: =14
+            Text: ="NO"
+            Visible: =ctxShowAprvDlg
+            Width: =155
+            X: =711
+            Y: =434
+            ZIndex: =32
+

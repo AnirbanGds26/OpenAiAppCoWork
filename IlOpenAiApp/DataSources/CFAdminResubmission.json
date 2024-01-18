@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "0ff2c453-069c-4563-885a-70d4d9c3152e",
+    "Name": "CFAdminResubmission",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "c9a41d22-7c63-ee11-be6e-000d3a572f57"
+  }
+]

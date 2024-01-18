@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "67ca079c-d57d-4019-8e0d-28884a09a8c3",
+    "Name": "CFSlIntermediateApproval",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "063e4272-f7ad-ee11-a568-0022481ca754"
+  }
+]

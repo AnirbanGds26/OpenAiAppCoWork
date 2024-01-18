@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "377d5a35-1e39-4342-9189-47db70908f92",
+    "Name": "DataClassApprovalV2",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "9f580aa2-655b-ee11-be6f-0022480811a3"
+  }
+]

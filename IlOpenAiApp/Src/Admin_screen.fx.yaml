@@ -1,0 +1,840 @@
+Admin_screen As screen:
+    Fill: =RGBA(34, 36, 46, 1)
+    OnVisible: |-
+        =UpdateContext({ctxShowHelpDlg: false })
+
+    rectAdmFiltCat As rectangle:
+        Fill: =RGBA(58, 58, 74, 1)
+        Width: =411
+        X: =912
+        Y: =95
+        ZIndex: =1
+
+    rectAdmFiltAllCat As rectangle:
+        Fill: =RGBA(237, 101, 0, 1)
+        Width: =180
+        X: =710
+        Y: =95
+        ZIndex: =2
+
+    rectAdmFiltRej As rectangle:
+        Fill: =RGBA(185, 37, 28, 1)
+        Width: =185
+        X: =499
+        Y: =95
+        ZIndex: =3
+
+    rectAdmFiltPending As rectangle:
+        BorderColor: =RGBA(22, 135, 54, 1)
+        BorderThickness: =
+        Fill: =RGBA(255,165,0,1)
+        Width: =180
+        X: =293
+        Y: =95
+        ZIndex: =4
+
+    rectAdmFiltApprv As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderThickness: =
+        Fill: =RGBA(22, 135, 54, 1)
+        Width: =180
+        X: =83
+        Y: =95
+        ZIndex: =5
+
+    "AdminGal As gallery.'BrowseLayout_Vertical_OneImageThreeColumnVariant_ver5.0'":
+        BorderColor: =RGBA(255, 230, 0, 1)
+        DelayItemLoading: =true
+        FocusedBorderThickness: =0
+        Height: =524
+        Items: =If(IsBlank(Trim(txtSearchGalAdm.Text)),Switch(ctxBtnFilter,"approved",Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation'),"Assurance",Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation'),"Consulting",Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation'),"EW Hub",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation'),"Data Classification",Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation'),"UK & Ireland",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation'),Filter('IL-OpenAI-POC-Requests',Status='IL-OpenAI-RequestStatus'.'Ready for Implementation')),"pending",Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review')),"Assurance",Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review')),"Consulting",Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review')),"EW Hub",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review')),"Data Classification",Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review')),"UK & Ireland",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review')),Filter('IL-OpenAI-POC-Requests',Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review')),"rejected",Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And Status='IL-OpenAI-RequestStatus'.Rejected),"Assurance",Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And Status='IL-OpenAI-RequestStatus'.Rejected),"Consulting",Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And Status='IL-OpenAI-RequestStatus'.Rejected),"EW Hub",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And Status='IL-OpenAI-RequestStatus'.Rejected),"Data Classification",Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And Status='IL-OpenAI-RequestStatus'.Rejected),"UK & Ireland",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And Status='IL-OpenAI-RequestStatus'.Rejected),Filter('IL-OpenAI-POC-Requests',Status='IL-OpenAI-RequestStatus'.Rejected)),Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",Filter('IL-OpenAI-POC-Requests','Service Line'="tax"),"Assurance",Filter('IL-OpenAI-POC-Requests','Service Line'="assurance"),"Consulting",Filter('IL-OpenAI-POC-Requests','Service Line'="consulting"),"EW Hub",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"]),"Data Classification",Filter('IL-OpenAI-POC-Requests','Data Classification'="c4"),"UK & Ireland",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"]),'IL-OpenAI-POC-Requests')),Switch(ctxBtnFilter,"approved",Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation' And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Assurance",Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation' And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Consulting",Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation' And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"EW Hub",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation' And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Data Classification",Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation' And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"UK & Ireland",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation' And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),Filter('IL-OpenAI-POC-Requests',Status='IL-OpenAI-RequestStatus'.'Ready for Implementation' And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner'))),"pending",Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review') And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Assurance",Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review') And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Consulting",Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review') And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"EW Hub",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review') And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Data Classification",Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review') And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"UK & Ireland",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review') And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),Filter('IL-OpenAI-POC-Requests',(Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner') And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review'))),"rejected",Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And Status='IL-OpenAI-RequestStatus'.Rejected And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Assurance",Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And Status='IL-OpenAI-RequestStatus'.Rejected And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Consulting",Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And Status='IL-OpenAI-RequestStatus'.Rejected And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"EW Hub",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And Status='IL-OpenAI-RequestStatus'.Rejected And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Data Classification",Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And Status='IL-OpenAI-RequestStatus'.Rejected And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"UK & Ireland",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And Status='IL-OpenAI-RequestStatus'.Rejected And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),Filter('IL-OpenAI-POC-Requests',Status='IL-OpenAI-RequestStatus'.Rejected And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner'))),Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Assurance",Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Consulting",Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"EW Hub",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Data Classification",Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"UK & Ireland",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),Filter('IL-OpenAI-POC-Requests',Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner'))))
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        LoadingSpinnerColor: =Color.DarkRed
+        TemplatePadding: =0
+        TemplateSize: =250
+        Width: =1244
+        WrapCount: =3
+        X: =79
+        Y: =228
+        ZIndex: =6
+
+        rectAdmCardBg As rectangle:
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(46, 46, 60, 1)
+            Height: =239
+            OnSelect: =Select(Parent)
+            Width: =400
+            X: =4
+            Y: =4
+            ZIndex: =1
+
+        rectAdmCardBottom As rectangle:
+            Fill: =RGBA(116, 116, 128, 1)
+            Height: =60
+            OnSelect: =Select(Parent)
+            Width: =380
+            X: =14
+            Y: =174
+            ZIndex: =2
+
+        lblCardHeadingAdmin As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            FontWeight: =FontWeight.Semibold
+            Height: =37
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: =ThisItem.'Project Name'
+            Tooltip: =Self.Text
+            Width: =360
+            Wrap: =false
+            X: =10
+            Y: =8
+            ZIndex: =3
+
+        lblPoCAdm As label:
+            Color: =RGBA(196, 196, 205, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: ="Request"
+            Width: =69
+            X: =12
+            Y: =53
+            ZIndex: =4
+
+        lblDtAdmGl As label:
+            Color: =RGBA(196, 196, 205, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: ="Date"
+            Width: =69
+            X: =lblOwnerAdmGl.X
+            Y: =113
+            ZIndex: =5
+
+        lblAdmCardInfoTtl As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            OnSelect: =Select(Parent)
+            Text: ="Infosec"
+            Width: =78
+            X: =15
+            Y: =197
+            ZIndex: =6
+
+        lblAdmCardRiskTtl As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            OnSelect: =Select(Parent)
+            Text: ="Risk"
+            Width: =50
+            X: =176
+            Y: =197
+            ZIndex: =7
+
+        lblAdmCardDpTtl As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            OnSelect: =Select(Parent)
+            Text: ="DP"
+            Width: =50
+            X: =321
+            Y: =197
+            ZIndex: =8
+
+        lblPoCAdmVal As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingLeft: =0
+            Size: =11
+            Text: =ThisItem.'Project Request Name'
+            Tooltip: =Self.Text
+            Width: =310
+            Wrap: =false
+            X: =87
+            Y: =lblPoCAdm.Y
+            ZIndex: =9
+
+        lblOwnerAdmGl As label:
+            Color: =RGBA(196, 196, 205, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: ="Owner"
+            Width: =69
+            X: =lblPoCAdm.X
+            Y: =83
+            ZIndex: =10
+
+        lblDtAdmGlVal As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingLeft: =0
+            Size: =11
+            Text: =ThisItem.'Created On'
+            Width: =255
+            X: =87
+            Y: =lblDtAdmGl.Y
+            ZIndex: =11
+
+        lblOwnerAdmGlVal As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            LineHeight: =1
+            OnSelect: =Select(Parent)
+            PaddingLeft: =0
+            Size: =11
+            Text: |-
+                =With({varowners:Split(ThisItem.'Project Owner',";")},Switch(CountA(varowners),0,"",1,First(varowners).Value,First(varowners).Value&", +"&CountA(varowners)-1))
+            Tooltip: =ThisItem.'Project Owner'
+            Width: =310
+            X: =87
+            Y: =lblOwnerAdmGl.Y
+            ZIndex: =12
+
+        lblStatusAdmGl As label:
+            Color: =RGBA(196, 196, 205, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: ="Status"
+            Width: =69
+            X: =lblDtAdmGl.X
+            Y: =143
+            ZIndex: =13
+
+        lblStatusAdmGlVal As label:
+            Color: =Switch(ThisItem.Status,'IL-OpenAI-RequestStatus'.'Ready for Implementation',RGBA(141,198,63,1),'IL-OpenAI-RequestStatus'.Rejected,RGBA(246,88,16,1),RGBA(255,165,0,1))
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingLeft: =0
+            Size: =11
+            Text: =ThisItem.Status
+            Width: =300
+            X: =87
+            Y: =lblStatusAdmGl.Y
+            ZIndex: =14
+
+        iconGoGalAdm As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =24
+            Icon: =Icon.ChevronRight
+            OnSelect: =Set(varSelectedEntry,ThisItem.'IL-OpenAI-POC-Requests');Navigate(Edit_Admin)
+            Tooltip: ="View details"
+            Width: =24
+            X: =376
+            Y: =14
+            ZIndex: =15
+
+        crclAdmCardRiskInr As circle:
+            DisplayMode: =DisplayMode.View
+            Fill: =Switch(ThisItem.'Risk Approval','IL-OpenAI-Approvals'.'N/A',RGBA(241,244,249,100),'IL-OpenAI-Approvals'.'Pending Review',RGBA(255,230,0,1),'IL-OpenAI-Approvals'.Approved,RGBA(141,198,63,1),'IL-OpenAI-Approvals'.Rejected,RGBA(246,88,16,1),RGBA(214,214,214,100))
+            Height: =14
+            OnSelect: =Select(Parent)
+            Width: =14
+            X: =194
+            Y: =186
+            ZIndex: =16
+
+        crclAdmCardDpInr As circle:
+            DisplayMode: =DisplayMode.View
+            Fill: =Switch(ThisItem.'Data Protection Approval','IL-OpenAI-Approvals'.'N/A',RGBA(241,244,249,100),'IL-OpenAI-Approvals'.'Pending Review',RGBA(255,230,0,1),'IL-OpenAI-Approvals'.Approved,RGBA(141,198,63,1),'IL-OpenAI-Approvals'.Rejected,RGBA(246,88,16,1),RGBA(214,214,214,100))
+            Height: =14
+            OnSelect: =Select(Parent)
+            Width: =14
+            X: =340
+            Y: =186
+            ZIndex: =17
+
+        crclAdmCardInfoInr As circle:
+            DisplayMode: =DisplayMode.View
+            Fill: =Switch(ThisItem.'InfoSec Approval','IL-OpenAI-Approvals'.'N/A',RGBA(241,244,249,100),'IL-OpenAI-Approvals'.'Pending Review',RGBA(255,230,0,1),'IL-OpenAI-Approvals'.Approved,RGBA(141,198,63,1),'IL-OpenAI-Approvals'.Rejected,RGBA(246,88,16,1),RGBA(214,214,214,100))
+            Height: =14
+            OnSelect: =Select(Parent)
+            Width: =14
+            X: =47
+            Y: =186
+            ZIndex: =18
+
+        crclAdmCardRiskOtr As circle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =2
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =22
+            OnSelect: =Select(Parent)
+            Tooltip: =ThisItem.'Risk Approval'
+            Width: =22
+            X: =190
+            Y: =182
+            ZIndex: =19
+
+        crclAdmCardDpOtr As circle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =2
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =22
+            OnSelect: =Select(Parent)
+            Tooltip: =ThisItem.'Data Protection Approval'
+            Width: =22
+            X: =336
+            Y: =182
+            ZIndex: =20
+
+        crclAdmCardInfoOtr As circle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =2
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =22
+            OnSelect: =Select(Parent)
+            Tooltip: =ThisItem.'InfoSec Approval'
+            Width: =22
+            X: =43
+            Y: =182
+            ZIndex: =21
+
+    lblAdmGalCount As label:
+        Align: =Align.Right
+        Color: =RGBA(219, 219, 219, 1)
+        DisplayMode: =DisplayMode.View
+        Height: =20
+        Italic: =true
+        PaddingRight: =0
+        Size: =10
+        Text: ="Showing "&If(IsBlank(ctxBtnFilter) And IsBlank(Trim(txtSearchGalAdm.Text)),lblAllCount.Text,AdminGal.AllItemsCount)&" result(s)"
+        Width: =200
+        X: =1108
+        Y: =AdminGal.Y-22
+        ZIndex: =7
+
+    lblPageHeadingAdm As label:
+        Color: =RGBA(219, 219, 219, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =72
+        Size: =24
+        Text: ="OpenAI Requests"
+        Width: =335
+        X: =79
+        ZIndex: =8
+
+    ApproveCounter As rectangle:
+        BorderColor: =RGBA(22, 135, 54, 1)
+        BorderThickness: =
+        Fill: =RGBA(58, 58, 74, 1)
+        Width: =180
+        X: =88
+        Y: =95
+        ZIndex: =9
+
+    PendingCounter As rectangle:
+        BorderColor: =RGBA(237, 101, 0, 1)
+        BorderThickness: =
+        Fill: =RGBA(58, 58, 74, 1)
+        Width: =180
+        X: =298
+        Y: =95
+        ZIndex: =10
+
+    RejectCounter As rectangle:
+        BorderColor: =RGBA(185, 37, 28, 1)
+        BorderThickness: =
+        Fill: =RGBA(58, 58, 74, 1)
+        Width: =180
+        X: =505
+        Y: =95
+        ZIndex: =11
+
+    ApprovedLabelHead As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Bold
+        Height: =42
+        Size: =14
+        Text: ="Approved"
+        X: =104
+        Y: =95
+        ZIndex: =12
+
+    PendingLabelHead As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Bold
+        Height: =42
+        Size: =14
+        Text: ="Pending"
+        Width: =178
+        X: =297
+        Y: =95
+        ZIndex: =13
+
+    RejectLabel As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Bold
+        Height: =42
+        Size: =14
+        Text: ="Rejected"
+        X: =519
+        Y: =95
+        ZIndex: =14
+
+    lblApproveCount As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =42
+        Size: =30
+        Text: =Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",CountRows(Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation')),"Assurance",CountRows(Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation')),"Consulting",CountRows(Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation')),"EW Hub",CountRows(Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation')),"Data Classification",CountRows(Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation')),"UK & Ireland",CountRows(Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation')),CountRows(Filter('IL-OpenAI-POC-Requests',Status='IL-OpenAI-RequestStatus'.'Ready for Implementation')))
+        X: =104
+        Y: =137
+        ZIndex: =15
+
+    lblPendingCount As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =30
+        Text: =Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",CountRows(Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Pending Review'))),"Assurance",CountRows(Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Pending Review'))),"Consulting",CountRows(Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Pending Review'))),"EW Hub",CountRows(Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Pending Review'))),"Data Classification",CountRows(Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Pending Review'))),"UK & Ireland",CountRows(Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Pending Review'))),CountRows(Filter('IL-OpenAI-POC-Requests',Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Pending Review')))
+        Width: =142
+        X: =315
+        Y: =141
+        ZIndex: =16
+
+    lblRejectCount As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =42
+        Size: =30
+        Text: =Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",CountRows(Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And Status='IL-OpenAI-RequestStatus'.Rejected)),"Assurance",CountRows(Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And Status='IL-OpenAI-RequestStatus'.Rejected)),"Consulting",CountRows(Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And Status='IL-OpenAI-RequestStatus'.Rejected)),"EW Hub",CountRows(Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And Status='IL-OpenAI-RequestStatus'.Rejected)),"Data Classification",CountRows(Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And Status='IL-OpenAI-RequestStatus'.Rejected)),"UK & Ireland",CountRows(Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And Status='IL-OpenAI-RequestStatus'.Rejected)),CountRows(Filter('IL-OpenAI-POC-Requests',Status='IL-OpenAI-RequestStatus'.Rejected)))
+        X: =519
+        Y: =139
+        ZIndex: =17
+
+    ApproveBtn As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =ColorFade(Self.Fill, 15%)
+        Fill: =RGBA(102, 102, 102, 0)
+        Height: =100
+        HoverFill: =
+        OnSelect: |-
+            =UpdateContext({ctxBtnFilter:"approved"})
+        PressedFill: =
+        Size: =13
+        Text: =""
+        VerticalAlign: =VerticalAlign.Top
+        Width: =180
+        X: =88
+        Y: =95
+        ZIndex: =18
+
+    PendingBtn As button:
+        AutoDisableOnSelect: =false
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =100
+        HoverFill: =
+        OnSelect: |-
+            =UpdateContext({ctxBtnFilter:"pending"})
+        PressedFill: =
+        Size: =13
+        Text: =""
+        VerticalAlign: =VerticalAlign.Top
+        Width: =180
+        X: =298
+        Y: =95
+        ZIndex: =19
+
+    RejectBtn As button:
+        AutoDisableOnSelect: =false
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =100
+        HoverFill: =
+        OnSelect: |-
+            =UpdateContext({ctxBtnFilter:"rejected"})
+        PressedFill: =
+        Size: =13
+        Text: =""
+        VerticalAlign: =VerticalAlign.Top
+        Width: =180
+        X: =504
+        Y: =95
+        ZIndex: =20
+
+    ResetView As rectangle:
+        BorderColor: =RGBA(255, 191, 0, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =
+        Fill: =RGBA(58, 58, 74, 1)
+        Tooltip: =
+        Width: =180
+        X: =715
+        Y: =95
+        ZIndex: =21
+
+    AllLabelHead As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Bold
+        Height: =42
+        Size: =14
+        Text: ="All Requests"
+        Tooltip: =
+        X: =730
+        Y: =95
+        ZIndex: =22
+
+    lblAllCount As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =42
+        HoverColor: =Color.Black
+        Size: =30
+        Text: =Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",CountRows(Filter('IL-OpenAI-POC-Requests','Service Line'="tax")),"Assurance",CountRows(Filter('IL-OpenAI-POC-Requests','Service Line'="assurance")),"Consulting",CountRows(Filter('IL-OpenAI-POC-Requests','Service Line'="consulting")),"EW Hub",CountRows(Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"])),"Data Classification",CountRows(Filter('IL-OpenAI-POC-Requests','Data Classification'="c4")),"UK & Ireland",CountRows(Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"])),CountIf('IL-OpenAI-POC-Requests', true ))
+        Tooltip: =
+        X: =730
+        Y: =141
+        ZIndex: =23
+
+    rectLeftNarrowPanelAdm As rectangle:
+        Fill: =RGBA(46, 46, 56, 1)
+        Height: =768
+        Width: =64
+        ZIndex: =24
+
+    drpFilterAdminGal As combobox:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        ChevronBackground: =RGBA(0, 0, 0, 0)
+        ChevronDisabledBackground: =RGBA(255, 255, 255, 1)
+        ChevronDisabledFill: =RGBA(255, 255, 255, 1)
+        ChevronFill: =RGBA(102, 102, 102, 1)
+        ChevronHoverBackground: =RGBA(255, 255, 255, 1)
+        ChevronHoverFill: =RGBA(102, 102, 102, 1)
+        DefaultSelectedItems: =[""]
+        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayFields: =["SelectionType"]
+        FocusedBorderThickness: =0
+        HoverBorderColor: =
+        HoverFill: =RGBA(0, 0, 0, 0)
+        InputTextPlaceholder: =
+        IsSearchable: =false
+        Items: =SortByColumns(AdminEnum,"SelectionType",SortOrder.Ascending)
+        NoSelectionText: ="All"
+        OnChange: =Set(varname, Self.Selected.SelectionType)
+        PaddingLeft: =10
+        PressedColor: =RGBA(0, 0, 0, 1)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        SearchFields: =["SelectionType"]
+        SearchItems: =[]
+        SelectionColor: =RGBA(0, 0, 0, 1)
+        SelectionFill: =RGBA(219, 219, 219, 1)
+        SelectMultiple: =false
+        Width: =364
+        X: =935
+        Y: =135
+        ZIndex: =36
+
+    AllRecBtn As button:
+        AutoDisableOnSelect: =false
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =100
+        HoverFill: =
+        OnSelect: |-
+            =UpdateContext({ctxBtnFilter:Blank()})
+        PressedFill: =
+        Size: =13
+        Text: =""
+        VerticalAlign: =VerticalAlign.Top
+        Width: =180
+        X: =715
+        Y: =95
+        ZIndex: =37
+
+    lblFilterAdmCategory As label:
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        FontWeight: =FontWeight.Semibold
+        Height: =34
+        PaddingLeft: =0
+        Text: ="Filter Category"
+        Width: =144
+        X: =drpFilterAdminGal.X
+        Y: =98
+        ZIndex: =38
+
+    rectSepaAdmFilt As rectangle:
+        BorderStyle: =BorderStyle.None
+        Fill: =RGBA(136, 160, 209, 1)
+        Height: =2
+        Width: =rectAdmFiltCat.Width
+        X: =rectAdmFiltCat.X
+        Y: =rectAdmFiltCat.Y+rectAdmFiltCat.Height-2
+        ZIndex: =39
+
+    iconResetAdminFltr As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        FocusedBorderThickness: =0
+        Height: =25
+        Icon: =Icon.Reset
+        OnSelect: |-
+            =UpdateContext({ctxBtnFilter:Blank()});Reset(drpFilterAdminGal);Refresh('IL-OpenAI-POC-Requests');Reset(AdminGal)
+        PaddingBottom: =2
+        PaddingLeft: =2
+        PaddingRight: =2
+        PaddingTop: =2
+        Tooltip: ="Reset all filters"
+        Width: =25
+        X: =1274
+        Y: =103
+        ZIndex: =40
+
+    grpLeftPanelAdm As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =40
+
+        FaqBtn_1 As icon.QuestionMark:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =36
+            Icon: =Icon.QuestionMark
+            Visible: =false
+            Width: =36
+            X: =13
+            Y: =634
+            ZIndex: =25
+
+        UserAddBtn_7 As icon.AddUser:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =36
+            Icon: =Icon.AddUser
+            OnSelect: =If(vvLoggedInUserGrp='IL-OpenAI-AccessGroups'.ADMIN,Navigate(UserMgmt,ScreenTransition.None),Notify("Not enough permission",NotificationType.Warning,4000))
+            Tooltip: ="User Management (Users can be assciated with an applicatio role !)"
+            Visible: =If(Text(loggedusergroup)="ADMIN",true,false)
+            Width: =36
+            X: =13
+            Y: =700
+            ZIndex: =26
+
+        menuBtn_15 As icon.Hamburger:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =36
+            Icon: =Icon.Hamburger
+            OnSelect: =Set(SearchVis,true)
+            Visible: =false
+            Width: =36
+            X: =13
+            Y: =24
+            ZIndex: =27
+
+        Rectangle1_9 As rectangle:
+            Fill: =RGBA(46, 46, 56, 1)
+            Height: =768
+            Visible: =If(SearchVis,true,false)
+            Width: =338
+            ZIndex: =28
+
+        menuBtnWidth_3 As icon.Hamburger:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =36
+            Icon: =Icon.Hamburger
+            OnSelect: =Set(SearchVis,false)
+            Visible: =If(SearchVis,true,false)
+            Width: =36
+            X: =13
+            Y: =24
+            ZIndex: =29
+
+        UserAddBtn_2 As icon.AddUser:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =36
+            Icon: =Icon.AddUser
+            OnSelect: =If(loggedusergroup.Text="ADMIN",Navigate(UserMgmt),Notify( "Not enough permission", NotificationType.Warning, 4000 ))
+            Tooltip: ="User Management"
+            Visible: =If(SearchVis,true,false)&&If(loggedusergroup.Text="ADMIN",true,false)
+            Width: =36
+            X: =13
+            Y: =704
+            ZIndex: =30
+
+        FaqBtn_7 As icon.QuestionMark:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =36
+            Icon: =Icon.QuestionMark
+            Visible: |-
+                =//If(SearchVis,true,false)
+                false
+            Width: =36
+            X: =13
+            Y: =630
+            ZIndex: =31
+
+        Label6_3 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Size: =18
+            Text: ="FAQ"
+            Visible: |-
+                =//If(SearchVis,true,false)
+                false
+            X: =84
+            Y: =630
+            ZIndex: =32
+
+        Label8_28 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Size: =18
+            Text: ="User Managment"
+            Visible: =If(SearchVis,true,false)&&If(loggedusergroup.Text="ADMIN",true,false)
+            Width: =237
+            X: =84
+            Y: =704
+            ZIndex: =33
+
+        faqBtnWide_7 As button:
+            BorderThickness: =20
+            Fill: =RGBA(46, 46, 56, 0)
+            HoverFill: |
+                =
+            OnSelect: =Navigate(FAQ,ScreenTransition.Fade);Set(SearchVis,false)
+            PressedFill: =
+            Text: =""
+            Visible: |-
+                =//If(SearchVis,true,false)
+                false
+            Width: =308
+            X: =13
+            Y: =630
+            ZIndex: =34
+
+        userMgntBtnWide_3 As button:
+            Fill: =RGBA(0, 0, 0, 0)
+            HoverFill: =
+            OnSelect: =Navigate(UserMgmt,ScreenTransition.Fade)
+            PressedFill: =
+            Text: =""
+            Visible: =If(SearchVis,true,false)&&If(loggedusergroup.Text="ADMIN",true,false)
+            Width: =308
+            X: =13
+            Y: =704
+            ZIndex: =35
+
+    txtSearchGalAdm As text:
+        BorderColor: =RGBA(202, 202, 202, 1)
+        BorderThickness: =1
+        Clear: =true
+        Color: =RGBA(255, 255, 255, 1)
+        Default: =""
+        Fill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =1
+        HintText: ="(Search by Project Name or Owner)"
+        HoverBorderColor: =Self.BorderColor
+        HoverColor: =RGBA(102, 102, 102, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PressedBorderColor: =Self.BorderColor
+        Size: =11
+        Tooltip: ="Search by Project Name or Owner"
+        X: =501
+        Y: =34
+        ZIndex: =43
+
+    grpFilterValueAdm As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =43
+
+        btnSelectedFilterAdm As button:
+            Align: =Align.Left
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =1
+            DisabledBorderColor: =Self.BorderColor
+            DisabledColor: =Self.Color
+            DisabledFill: =Self.Fill
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =1
+            FontWeight: =FontWeight.Normal
+            Height: =25
+            HoverBorderColor: =Self.BorderColor
+            HoverFill: =Self.Fill
+            PaddingBottom: =12
+            PaddingLeft: =15
+            PaddingRight: =10
+            PaddingTop: =10
+            PressedBorderColor: =Self.Color
+            PressedColor: =Self.Color
+            PressedFill: =Self.Fill
+            RadiusBottomLeft: =35
+            RadiusBottomRight: =35
+            RadiusTopLeft: =35
+            RadiusTopRight: =35
+            Size: =10
+            Text: |-
+                =If(IsBlank(drpFilterAdminGal.Selected.SelectionType) And IsBlank(ctxBtnFilter),Blank(),!IsBlank(drpFilterAdminGal.Selected.SelectionType) And !IsBlank(ctxBtnFilter),"Category: "&drpFilterAdminGal.Selected.SelectionType&", State: "&Proper(ctxBtnFilter),!IsBlank(drpFilterAdminGal.Selected.SelectionType) And IsBlank(ctxBtnFilter),"Category: "&drpFilterAdminGal.Selected.SelectionType&", State: All",IsBlank(drpFilterAdminGal.Selected.SelectionType) And !IsBlank(ctxBtnFilter),"Category: All"&", State: "&Proper(ctxBtnFilter))
+            Visible: =If(IsBlank(drpFilterAdminGal.Selected.SelectionType) And IsBlank(ctxBtnFilter), false , true )
+            Width: =Len(Self.Text)*8
+            X: =rectAdmFiltCat.X
+            Y: =55
+            ZIndex: =41
+
+        iconSelectedFilterAdm As icon.Add:
+            Color: =RGBA(255, 0, 0, 1)
+            Height: =15
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =UpdateContext({ctxBtnFilter:Blank()});Reset(drpFilterAdminGal);Refresh('IL-OpenAI-POC-Requests');Reset(AdminGal)
+            Visible: =If(IsBlank(drpFilterAdminGal.Selected.SelectionType) And IsBlank(ctxBtnFilter), false , true )
+            Width: =15
+            X: =btnSelectedFilterAdm.X+btnSelectedFilterAdm.Width-Self.Width-12
+            Y: =btnSelectedFilterAdm.Y+btnSelectedFilterAdm.Height/2-Self.Height/2
+            ZIndex: =42
+
+    iconHelpAdm As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =36
+        Icon: =Icon.Help
+        OnSelect: |-
+            =UpdateContext({ctxShowHelpDlg: true })
+        Tooltip: ="Help Information"
+        Width: =36
+        X: =13
+        Y: =630
+        ZIndex: =49
+
+    CompGenAiHelp_Adm As CompGenAiHelp:
+        OnBtnMailClicked: |-
+            =Launch("mailto: eyfabric.openai@ey.com",{Subject:User().FullName&" || Requesting Help in Gen AI Power App Application",Cc:User().Email,Body:"Please write your concern here !"})
+        OnCloseIconClicked: |-
+            =UpdateContext({ctxShowHelpDlg: false })
+        Visible: =ctxShowHelpDlg
+        ZIndex: =50
+

@@ -1,0 +1,247 @@
+UserMgmt As screen:
+    Fill: =RGBA(34, 36, 46, 1)
+    Height: =Max(App.Height, App.DesignHeight)
+    OnVisible: =Reset(CmboSearchUser);Reset(DdlAccessGroup);Reset(DdlAccessGroupGalFilter)
+    Width: =Max(App.Width, App.DesignWidth)
+
+    loggedusergroup As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =33
+        Text: =LookUp('IL-OpenAI-Users',User().Email='User Email','Access Group')
+        Visible: =false
+        Width: =276
+        X: =183
+        Y: =720
+        ZIndex: =1
+
+    loggeduseremail As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =33
+        Text: =User().Email
+        Visible: =false
+        Width: =276
+        X: =183
+        Y: =687
+        ZIndex: =2
+
+    "userGal As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        BorderColor: =RGBA(237, 237, 237, 1)
+        DelayItemLoading: =true
+        Height: =639
+        Items: =If(IsBlank(DdlAccessGroupGalFilter.Selected.Value),SortByColumns('IL-OpenAI-Users',"cr41e_useremail"),SortByColumns(Filter('IL-OpenAI-Users','Access Group'=DdlAccessGroupGalFilter.Selected.Value),"cr41e_useremail"))
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =40
+        Width: =731
+        X: =118
+        Y: =110
+        ZIndex: =3
+
+        email As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =18
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.'User Email'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =202
+            Y: =12
+            ZIndex: =2
+
+        grouprole As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =18
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =ThisItem.'Access Group'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =308
+            X: =356
+            Y: =12
+            ZIndex: =3
+
+        Separator2 As rectangle:
+            Height: =4
+            OnSelect: =Select(Parent)
+            Width: =728
+            Y: =36
+            ZIndex: =5
+
+        Icon1 As icon.Erase:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =40
+            Icon: =Icon.Erase
+            OnSelect: =Remove('IL-OpenAI-Users',userGal.Selected)
+            PaddingBottom: =10
+            PaddingTop: =10
+            X: =664
+            ZIndex: =6
+
+    RegisteredUser_Title As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        PaddingLeft: =0
+        Size: =18
+        Text: ="Registered User(s)"
+        Underline: =true
+        Width: =266
+        X: =118
+        Y: =57
+        ZIndex: =4
+
+    Rectangle2_1 As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =768
+        Width: =4
+        X: =916
+        ZIndex: =5
+
+    AddUser_Title As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =16
+        Text: ="Add User"
+        Width: =198
+        X: =968
+        Y: =57
+        ZIndex: =6
+
+    UserEmail_Title As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =12
+        Text: ="User's Email"
+        Width: =198
+        X: =968
+        Y: =110
+        ZIndex: =7
+
+    AccessGroup_Title As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =12
+        Text: ="Access Group"
+        Width: =198
+        X: =968
+        Y: =198
+        ZIndex: =8
+
+    DdlAccessGroup As dropdown:
+        AllowEmptySelection: =true
+        ChevronBackground: =RGBA(255, 230, 0, 1)
+        ChevronFill: =RGBA(0, 0, 0, 1)
+        Default: =""
+        Items: =Sort(Choices('IL-OpenAI-AccessGroups'),Text(Value))
+        Size: =10
+        X: =968
+        Y: =238
+        ZIndex: =9
+
+    lblHiddenUserEmail As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =CmboSearchUser.Height
+        Size: =12
+        Text: =CmboSearchUser.Selected.Mail
+        Visible: =false
+        Width: =CmboSearchUser.Width
+        X: =CmboSearchUser.X
+        Y: =CmboSearchUser.Y
+        ZIndex: =10
+
+    CmboSearchUser As combobox:
+        BorderThickness: =0
+        ChevronBackground: =RGBA(255, 230, 0, 1)
+        ChevronFill: =RGBA(0, 0, 0, 1)
+        DisplayFields: =["DisplayName","Mail"]
+        FocusedBorderThickness: =0
+        InputTextPlaceholder: ="Search user email"
+        Items: |-
+            =Office365Users.SearchUserV2({searchTerm:CmboSearchUser.SearchText}).value
+        OnChange: =
+        SearchFields: =["Mail"]
+        SearchItems: |-
+            =Search(Office365Users.SearchUserV2({searchTerm:CmboSearchUser.SearchText}).value,CmboSearchUser.SearchText,"Mail")
+        SelectMultiple: =false
+        Template: =ListItemTemplate.Double
+        X: =968
+        Y: =150
+        ZIndex: =11
+
+    btnAddUser As button:
+        BorderColor: =
+        BorderThickness: =0
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(255, 230, 0, 1)
+        Height: =45
+        HoverFill: =ColorFade(RGBA(230, 230, 0, 100), -20%)
+        OnSelect: |-
+            =If(IsBlankOrError(lblHiddenUserEmail.Text),Notify("Please provide an User Email !",NotificationType.Warning,3000),IsBlankOrError(DdlAccessGroup.Selected.Value),Notify("Please select an Access Group !",NotificationType.Warning,3000),If(CountRows(Filter('IL-OpenAI-Users','User Email'=lblHiddenUserEmail.Text))<=0,Patch('IL-OpenAI-Users',Defaults('IL-OpenAI-Users'),{'Access Group':DdlAccessGroup.Selected.Value,'User Email':lblHiddenUserEmail.Text});Reset(CmboSearchUser);Reset(DdlAccessGroup);Set(vvLoggedInUserGrp,LookUp('IL-OpenAI-Users','User Email'=User().Email,'Access Group')),Notify("User already exists in data base. Please remove the existing entry to add freshly.",NotificationType.Warning,3000)))
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="Add User"
+        X: =1136
+        Y: =310
+        ZIndex: =12
+
+    loggedusername As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =33
+        Text: =User().FullName
+        Visible: =false
+        Width: =276
+        X: =183
+        Y: =654
+        ZIndex: =13
+
+    Rectangle2_21 As rectangle:
+        Fill: =RGBA(46, 46, 56, 1)
+        Height: =768
+        OnSelect: =If(IsBlank(DdlAccessGroupGalFilter.Selected.Value),'IL-OpenAI-Users',Filter('IL-OpenAI-Users','Access Group'=DdlAccessGroupGalFilter.Selected.Value))
+        Width: =64
+        ZIndex: =14
+
+    IconBackFromUserMgmt As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =40
+        Icon: =Icon.BackArrow
+        OnSelect: =If(IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.ADMIN),Navigate(Admin_screen),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.Tax),Navigate(SL_TAX),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.Assurance),Navigate(SL_ASSURANCE),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.Consulting),Navigate(SL_CONSULTING),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.'EW Hub'),Navigate(SL_EWHub),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.'UK&I'),Navigate(SL_UKIreland),IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.'Data Protection') Or IsMatch(vvLoggedInUserGrp,"infosec",MatchOptions.Contains&MatchOptions.IgnoreCase) Or IsMatch(vvLoggedInUserGrp,'IL-OpenAI-AccessGroups'.Risk,MatchOptions.Contains&MatchOptions.IgnoreCase),Navigate(SL_DataClass));
+        Width: =40
+        X: =12
+        Y: =702
+        ZIndex: =15
+
+    DdlAccessGroupGalFilter As combobox:
+        BorderThickness: =0
+        ChevronBackground: =RGBA(255, 230, 0, 1)
+        ChevronFill: =RGBA(0, 0, 0, 1)
+        DefaultSelectedItems: =
+        DisplayFields: =["Value"]
+        FocusedBorderThickness: =0
+        Height: =35
+        InputTextPlaceholder: ="Search user email"
+        IsSearchable: =false
+        Items: =Sort(Choices('IL-OpenAI-AccessGroups'),Text(Value))
+        NoSelectionText: ="All"
+        OnChange: =
+        SearchFields: =["Value"]
+        SearchItems: =[]
+        SelectMultiple: =false
+        Width: =220
+        X: =629
+        Y: =RegisteredUser_Title.Y+RegisteredUser_Title.Height/2-Self.Height/2
+        ZIndex: =16
+
