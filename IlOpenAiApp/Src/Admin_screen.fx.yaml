@@ -46,14 +46,14 @@ Admin_screen As screen:
         BorderColor: =RGBA(255, 230, 0, 1)
         DelayItemLoading: =true
         FocusedBorderThickness: =0
-        Height: =524
+        Height: =750
         Items: =If(IsBlank(Trim(txtSearchGalAdm.Text)),Switch(ctxBtnFilter,"approved",Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation'),"Assurance",Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation'),"Consulting",Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation'),"EW Hub",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation'),"Data Classification",Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation'),"UK & Ireland",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation'),Filter('IL-OpenAI-POC-Requests',Status='IL-OpenAI-RequestStatus'.'Ready for Implementation')),"pending",Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review')),"Assurance",Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review')),"Consulting",Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review')),"EW Hub",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review')),"Data Classification",Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review')),"UK & Ireland",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review')),Filter('IL-OpenAI-POC-Requests',Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review')),"rejected",Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And Status='IL-OpenAI-RequestStatus'.Rejected),"Assurance",Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And Status='IL-OpenAI-RequestStatus'.Rejected),"Consulting",Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And Status='IL-OpenAI-RequestStatus'.Rejected),"EW Hub",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And Status='IL-OpenAI-RequestStatus'.Rejected),"Data Classification",Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And Status='IL-OpenAI-RequestStatus'.Rejected),"UK & Ireland",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And Status='IL-OpenAI-RequestStatus'.Rejected),Filter('IL-OpenAI-POC-Requests',Status='IL-OpenAI-RequestStatus'.Rejected)),Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",Filter('IL-OpenAI-POC-Requests','Service Line'="tax"),"Assurance",Filter('IL-OpenAI-POC-Requests','Service Line'="assurance"),"Consulting",Filter('IL-OpenAI-POC-Requests','Service Line'="consulting"),"EW Hub",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"]),"Data Classification",Filter('IL-OpenAI-POC-Requests','Data Classification'="c4"),"UK & Ireland",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"]),'IL-OpenAI-POC-Requests')),Switch(ctxBtnFilter,"approved",Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation' And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Assurance",Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation' And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Consulting",Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation' And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"EW Hub",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation' And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Data Classification",Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation' And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"UK & Ireland",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And Status='IL-OpenAI-RequestStatus'.'Ready for Implementation' And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),Filter('IL-OpenAI-POC-Requests',Status='IL-OpenAI-RequestStatus'.'Ready for Implementation' And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner'))),"pending",Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review') And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Assurance",Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review') And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Consulting",Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review') And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"EW Hub",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review') And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Data Classification",Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review') And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"UK & Ireland",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review') And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),Filter('IL-OpenAI-POC-Requests',(Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner') And (Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub' Or Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I' Or Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' Or Status='IL-OpenAI-RequestStatus'.'Pending Review'))),"rejected",Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And Status='IL-OpenAI-RequestStatus'.Rejected And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Assurance",Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And Status='IL-OpenAI-RequestStatus'.Rejected And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Consulting",Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And Status='IL-OpenAI-RequestStatus'.Rejected And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"EW Hub",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And Status='IL-OpenAI-RequestStatus'.Rejected And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Data Classification",Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And Status='IL-OpenAI-RequestStatus'.Rejected And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"UK & Ireland",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And Status='IL-OpenAI-RequestStatus'.Rejected And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),Filter('IL-OpenAI-POC-Requests',Status='IL-OpenAI-RequestStatus'.Rejected And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner'))),Switch(drpFilterAdminGal.Selected.SelectionType,"Tax",Filter('IL-OpenAI-POC-Requests','Service Line'="tax" And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Assurance",Filter('IL-OpenAI-POC-Requests','Service Line'="assurance" And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Consulting",Filter('IL-OpenAI-POC-Requests','Service Line'="consulting" And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"EW Hub",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["France","Germany","Austria","Belgium","Netherlands","Switzerland","Italy","Spain","Portugal","Luxembourg"] And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"Data Classification",Filter('IL-OpenAI-POC-Requests','Data Classification'="c4" And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),"UK & Ireland",Filter('IL-OpenAI-POC-Requests','Leading Country' in ["United Kingdom","Ireland"] And (Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner')),Filter('IL-OpenAI-POC-Requests',Trim(txtSearchGalAdm.Text) in 'Project Name' Or Trim(txtSearchGalAdm.Text) in 'Project Owner'))))
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         LoadingSpinnerColor: =Color.DarkRed
         TemplatePadding: =0
-        TemplateSize: =250
-        Width: =1244
+        TemplateSize: =276
+        Width: =1242
         WrapCount: =3
         X: =79
         Y: =228
@@ -62,7 +62,7 @@ Admin_screen As screen:
         rectAdmCardBg As rectangle:
             DisplayMode: =DisplayMode.View
             Fill: =RGBA(46, 46, 60, 1)
-            Height: =239
+            Height: =265
             OnSelect: =Select(Parent)
             Width: =400
             X: =4
@@ -75,7 +75,7 @@ Admin_screen As screen:
             OnSelect: =Select(Parent)
             Width: =380
             X: =14
-            Y: =174
+            Y: =200
             ZIndex: =2
 
         lblCardHeadingAdmin As label:
@@ -125,7 +125,7 @@ Admin_screen As screen:
             Text: ="Infosec"
             Width: =78
             X: =15
-            Y: =197
+            Y: =222
             ZIndex: =6
 
         lblAdmCardRiskTtl As label:
@@ -136,7 +136,7 @@ Admin_screen As screen:
             Text: ="Risk"
             Width: =50
             X: =176
-            Y: =197
+            Y: =222
             ZIndex: =7
 
         lblAdmCardDpTtl As label:
@@ -147,7 +147,7 @@ Admin_screen As screen:
             Text: ="DP"
             Width: =50
             X: =321
-            Y: =197
+            Y: =222
             ZIndex: =8
 
         lblPoCAdmVal As label:
@@ -206,29 +206,29 @@ Admin_screen As screen:
             Y: =lblOwnerAdmGl.Y
             ZIndex: =12
 
-        lblStatusAdmGl As label:
+        lblDepIDAdmGl As label:
             Color: =RGBA(196, 196, 205, 1)
             DisplayMode: =DisplayMode.View
             Height: =30
             OnSelect: =Select(Parent)
             Size: =11
-            Text: ="Status"
+            Text: ="Dep ID"
             Width: =69
             X: =lblDtAdmGl.X
             Y: =143
             ZIndex: =13
 
-        lblStatusAdmGlVal As label:
-            Color: =Switch(ThisItem.Status,'IL-OpenAI-RequestStatus'.'Ready for Implementation',RGBA(141,198,63,1),'IL-OpenAI-RequestStatus'.Rejected,RGBA(246,88,16,1),RGBA(255,165,0,1))
+        lblDep_ID_AdmGlVal As label:
+            Color: =RGBA(255, 255, 255, 1)
             DisplayMode: =DisplayMode.View
             Height: =30
             OnSelect: =Select(Parent)
             PaddingLeft: =0
             Size: =11
-            Text: =ThisItem.Status
+            Text: =ThisItem.'Deployment ID'
             Width: =300
             X: =87
-            Y: =lblStatusAdmGl.Y
+            Y: =lblDepIDAdmGl.Y
             ZIndex: =14
 
         iconGoGalAdm As icon.Add:
@@ -249,7 +249,7 @@ Admin_screen As screen:
             OnSelect: =Select(Parent)
             Width: =14
             X: =194
-            Y: =186
+            Y: =214
             ZIndex: =16
 
         crclAdmCardDpInr As circle:
@@ -259,7 +259,7 @@ Admin_screen As screen:
             OnSelect: =Select(Parent)
             Width: =14
             X: =340
-            Y: =186
+            Y: =214
             ZIndex: =17
 
         crclAdmCardInfoInr As circle:
@@ -269,7 +269,7 @@ Admin_screen As screen:
             OnSelect: =Select(Parent)
             Width: =14
             X: =47
-            Y: =186
+            Y: =214
             ZIndex: =18
 
         crclAdmCardRiskOtr As circle:
@@ -282,7 +282,7 @@ Admin_screen As screen:
             Tooltip: =ThisItem.'Risk Approval'
             Width: =22
             X: =190
-            Y: =182
+            Y: =210
             ZIndex: =19
 
         crclAdmCardDpOtr As circle:
@@ -295,7 +295,7 @@ Admin_screen As screen:
             Tooltip: =ThisItem.'Data Protection Approval'
             Width: =22
             X: =336
-            Y: =182
+            Y: =210
             ZIndex: =20
 
         crclAdmCardInfoOtr As circle:
@@ -308,8 +308,33 @@ Admin_screen As screen:
             Tooltip: =ThisItem.'InfoSec Approval'
             Width: =22
             X: =43
-            Y: =182
+            Y: =210
             ZIndex: =21
+
+        lblStatusAdmGl As label:
+            Color: =RGBA(196, 196, 205, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: ="Status"
+            Width: =69
+            X: =12
+            Y: =170
+            ZIndex: =22
+
+        lblStatusAdmGlVal_1 As label:
+            Color: =Switch(ThisItem.Status,'IL-OpenAI-RequestStatus'.'Ready for Implementation',RGBA(141,198,63,1),'IL-OpenAI-RequestStatus'.Completed,RGBA(141,198,63,1),'IL-OpenAI-RequestStatus'.Rejected,RGBA(246,88,16,1),RGBA(255,165,0,1))
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingLeft: =0
+            Size: =11
+            Text: =ThisItem.Status
+            Width: =300
+            X: =87
+            Y: =lblStatusAdmGl.Y
+            ZIndex: =23
 
     lblAdmGalCount As label:
         Align: =Align.Right
