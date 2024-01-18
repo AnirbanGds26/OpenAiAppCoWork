@@ -11,7 +11,7 @@
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
         "7e1b143b-37b1-4e65-ae2f-261e3ab6ec78": {
-          "value": "shared_office365"
+          "value": "shared_office365_1"
         },
         "93013c7f-effc-4de8-8bd2-30d051481495": {
           "value": "shared_commondataserviceforapps_1"
@@ -65,7 +65,7 @@
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
         "7e1b143b-37b1-4e65-ae2f-261e3ab6ec78": {
-          "value": "shared_office365"
+          "value": "shared_office365_1"
         },
         "93013c7f-effc-4de8-8bd2-30d051481495": {
           "value": "shared_commondataserviceforapps"

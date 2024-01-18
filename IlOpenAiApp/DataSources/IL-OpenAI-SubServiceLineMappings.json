@@ -6,6 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "cr41e_ilopenaisubservicelinemapping",
+    "MaxGetRowsCount": 2000,
     "Name": "IL-OpenAI-SubServiceLineMappings",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",
