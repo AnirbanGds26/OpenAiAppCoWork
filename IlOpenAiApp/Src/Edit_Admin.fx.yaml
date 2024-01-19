@@ -1310,7 +1310,7 @@ Edit_Admin As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =12
-        Text: ="Provision"
+        Text: ="Provisioned"
         Visible: |
             =If(ctxOverallStatus='IL-OpenAI-RequestStatus'.'Ready for Implementation', true , false )
         Width: =110
