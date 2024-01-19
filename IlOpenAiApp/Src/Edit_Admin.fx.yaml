@@ -1310,7 +1310,7 @@ Edit_Admin As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =12
-        Text: ="Complete"
+        Text: ="Provision"
         Visible: |
             =If(ctxOverallStatus='IL-OpenAI-RequestStatus'.'Ready for Implementation', true , false )
         Width: =110
@@ -1482,7 +1482,37 @@ Edit_Admin As screen:
 
     lblHeaderStatusAdm As label:
         Align: =Align.Right
-        Color: =Switch(ctxOverallStatus,'IL-OpenAI-RequestStatus'.'Ready for Implementation',RGBA(141,198,63,1),'IL-OpenAI-RequestStatus'.Rejected,RGBA(246,88,16,1),RGBA(255,165,0,1))
+        Color: |-
+            =Switch(
+                ctxOverallStatus,
+                'IL-OpenAI-RequestStatus'.'Ready for Implementation',
+                RGBA(
+                    141,
+                    198,
+                    63,
+                    1
+                ),
+                'IL-OpenAI-RequestStatus'.Provisioned,
+                RGBA(
+                    141,
+                    198,
+                    63,
+                    1
+                ),
+                'IL-OpenAI-RequestStatus'.Rejected,
+                RGBA(
+                    246,
+                    88,
+                    16,
+                    1
+                ),
+                RGBA(
+                    255,
+                    165,
+                    0,
+                    1
+                )
+            )
         DisplayMode: =DisplayMode.View
         Height: =lblHeaderAdm.Height
         Italic: =true
@@ -1720,7 +1750,7 @@ Edit_Admin As screen:
             Y: =428
             ZIndex: =28
 
-    grpcomplete As group:
+    grpProvision As group:
         Height: =5
         Width: =5
         X: =40
@@ -1751,8 +1781,8 @@ Edit_Admin As screen:
             PaddingLeft: =35
             PaddingRight: =35
             Size: =16
-            Text: ="You are Completing the Project request. Do you want to proceed?"
-            Visible: =ctxShwResubmitDlg
+            Text: ="You are Provisioning the Project request. Do you want to proceed?"
+            Visible: =ctxShwCompleteDlg
             Width: =639
             X: =363
             Y: =205
@@ -1767,10 +1797,28 @@ Edit_Admin As screen:
             HoverColor: =RGBA(0, 0, 0, 1)
             HoverFill: =ColorFade(RGBA(255, 230, 0, 100), -20%)
             OnSelect: |-
-                =If(IsBlank(Trim(DataCardValue3.Text)),Notify("'Project Name' cannot be empty!",NotificationType.Warning,3000),IsBlank(Trim(DataCardValue4.Text)),Notify("'Project Request Name' cannot be empty!",NotificationType.Warning,3000),IsBlank(Trim(DataCardValue7.Text)),Notify("'Project Owner' cannot be empty!",NotificationType.Warning,3000),IsBlank(Trim(DataCardValue8.Text)),Notify("'Data Classification' cannot be empty!",NotificationType.Warning,3000),IsBlank(Trim(DataCardValue13.Text)),Notify("'Leading Country' cannot be empty!",NotificationType.Warning,3000),IsBlank(Trim(DataCardValue49.Text)),Notify("'Project Sponsor' cannot be empty!",NotificationType.Warning,3000),IsBlank(Trim(DataCardValue57.Text)),Notify("'Service Line' cannot be empty!",NotificationType.Warning,3000),SubmitForm(editAdminForm);With({withItem:LookUp('IL-OpenAI-POC-Requests','IL-OpenAI-POC-Requests'=GUID(varSelectedEntry))},UpdateContext({ctxDpAprStatus:withItem.'Data Protection Approval',ctxInfosecAprStatus:withItem.'InfoSec Approval',ctxRiskAprStatus:withItem.'Risk Approval'}));If(ctxDpAprStatus='IL-OpenAI-Approvals'.Rejected,Patch('IL-OpenAI-POC-Requests',{'IL-OpenAI-POC-Requests':GUID(varSelectedEntry)},{'Data Protection Approval':'IL-OpenAI-Approvals'.'Pending Review','Audit History':"Re-submitted by "&User().FullName&" as Admin on "&Text(Now(),"dd-mmm-yyyy")&"<br>"&ctxAuditHistoryTxt}));If(ctxInfosecAprStatus='IL-OpenAI-Approvals'.Rejected,Patch('IL-OpenAI-POC-Requests',{'IL-OpenAI-POC-Requests':GUID(varSelectedEntry)},{'InfoSec Approval':'IL-OpenAI-Approvals'.'Pending Review','Audit History':"Re-submitted by "&User().FullName&" as Admin on "&Text(Now(),"dd-mmm-yyyy")&"<br>"&ctxAuditHistoryTxt}));If(ctxRiskAprStatus='IL-OpenAI-Approvals'.Rejected,Patch('IL-OpenAI-POC-Requests',{'IL-OpenAI-POC-Requests':GUID(varSelectedEntry)},{'Risk Approval':'IL-OpenAI-Approvals'.'Pending Review','Audit History':"Re-submitted by "&User().FullName&" as Admin on "&Text(Now(),"dd-mmm-yyyy")&"<br>"&ctxAuditHistoryTxt}));CFAdminResubmission.Run(varSelectedEntry,User().FullName,User().Email,If(ctxDpAprStatus='IL-OpenAI-Approvals'.Rejected, true , false ),If(ctxInfosecAprStatus='IL-OpenAI-Approvals'.Rejected, true , false ),If(ctxRiskAprStatus='IL-OpenAI-Approvals'.Rejected, true , false ));UpdateContext({ctxOverallStatus:Blank(),ctxDpAprStatus:Blank(),ctxInfosecAprStatus:Blank(),ctxRiskAprStatus:Blank(),ctxAuditHistoryTxt:Blank(),ctxShwResubmitDlg: false ,ctxShowAuditHistory: false });Notify("The request is re-submitted!",NotificationType.Success,2000);Navigate(Admin_screen,ScreenTransition.None))
+                =Patch(
+                            'IL-OpenAI-POC-Requests',
+                            {'IL-OpenAI-POC-Requests': GUID(varSelectedEntry)},
+                            {
+                                Status: 'IL-OpenAI-RequestStatus'.Provisioned,
+                               'Provisioned Date': Now()
+                                   
+                               
+                            }
+                        );
+                    Notify(
+                        "The request is re-submitted!",
+                        NotificationType.Success,
+                        2000
+                    );
+                    Navigate(
+                        Admin_screen,
+                        ScreenTransition.None
+                    )
             Size: =14
             Text: ="YES"
-            Visible: =ctxShwResubmitDlg
+            Visible: =ctxShwCompleteDlg
             Width: =155
             X: =528
             Y: =428
@@ -1788,7 +1836,7 @@ Edit_Admin As screen:
                 =UpdateContext({ctxShwCompleteDlg: false })
             Size: =14
             Text: ="NO"
-            Visible: =ctxShwResubmitDlg
+            Visible: =ctxShwCompleteDlg
             Width: =155
             X: =707
             Y: =428

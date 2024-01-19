@@ -324,7 +324,7 @@ Admin_screen As screen:
             ZIndex: =22
 
         lblStatusAdmGlVal_1 As label:
-            Color: =Switch(ThisItem.Status,'IL-OpenAI-RequestStatus'.'Ready for Implementation',RGBA(141,198,63,1),'IL-OpenAI-RequestStatus'.Completed,RGBA(141,198,63,1),'IL-OpenAI-RequestStatus'.Rejected,RGBA(246,88,16,1),RGBA(255,165,0,1))
+            Color: =Switch(ThisItem.Status,'IL-OpenAI-RequestStatus'.'Ready for Implementation',RGBA(141,198,63,1),'IL-OpenAI-RequestStatus'.Provisioned,RGBA(141,198,63,1),'IL-OpenAI-RequestStatus'.Rejected,RGBA(246,88,16,1),RGBA(255,165,0,1))
             DisplayMode: =DisplayMode.View
             Height: =30
             OnSelect: =Select(Parent)
