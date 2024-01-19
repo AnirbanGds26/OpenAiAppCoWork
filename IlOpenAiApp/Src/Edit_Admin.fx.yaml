@@ -1806,21 +1806,21 @@ Edit_Admin As screen:
             Y: =428
             ZIndex: =32
 
-        btnNoProvision As button:
-            BorderThickness: =0
-            Color: =RGBA(0, 0, 0, 1)
-            Fill: =RGBA(255, 230, 0, 1)
-            FocusedBorderThickness: =0
-            Height: =45
-            HoverColor: =RGBA(0, 0, 0, 1)
-            HoverFill: =ColorFade(RGBA(255, 230, 0, 100), -20%)
-            OnSelect: |-
-                =UpdateContext({ctxShwCompleteDlg: false })
-            Size: =14
-            Text: ="NO"
-            Visible: =ctxShwCompleteDlg
-            Width: =155
-            X: =707
-            Y: =428
-            ZIndex: =34
+    btnNoProvision As button:
+        BorderThickness: =0
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(255, 230, 0, 1)
+        FocusedBorderThickness: =0
+        Height: =45
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =ColorFade(RGBA(255, 230, 0, 100), -20%)
+        OnSelect: |-
+            =UpdateContext({ctxShwCompleteDlg: false })
+        Size: =14
+        Text: ="NO"
+        Visible: =ctxShwCompleteDlg
+        Width: =155
+        X: =707
+        Y: =428
+        ZIndex: =34
 

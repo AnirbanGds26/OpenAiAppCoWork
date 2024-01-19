@@ -54,7 +54,7 @@ SL_EWHub As screen:
     "EWHubGal As gallery.'BrowseLayout_Vertical_OneImageThreeColumnVariant_ver5.0'":
         BorderColor: =RGBA(255, 230, 0, 1)
         DelayItemLoading: =true
-        Height: =663
+        Height: =650
         Items: =If(tglPendReqFilterEw,Filter('IL-OpenAI-POC-Requests',Status='IL-OpenAI-RequestStatus'.'Awaiting EW Hub',"France" in 'Leading Country'||"Germany" in 'Leading Country'||"Austria" in 'Leading Country'||"Belgium" in 'Leading Country'||"Netherlands" in 'Leading Country'||"Switzerland" in 'Leading Country'||"Italy" in 'Leading Country'||"Spain" in 'Leading Country'||"Portugal" in 'Leading Country'||"Luxembourg" in 'Leading Country',(Trim(txtSearchGalEWHub.Text) in 'Project Name' Or Trim(txtSearchGalEWHub.Text) in 'Project Owner')),Filter('IL-OpenAI-POC-Requests',"France" in 'Leading Country'||"Germany" in 'Leading Country'||"Austria" in 'Leading Country'||"Belgium" in 'Leading Country'||"Netherlands" in 'Leading Country'||"Switzerland" in 'Leading Country'||"Italy" in 'Leading Country'||"Spain" in 'Leading Country'||"Portugal" in 'Leading Country'||"Luxembourg" in 'Leading Country',(Trim(txtSearchGalEWHub.Text) in 'Project Name' Or Trim(txtSearchGalEWHub.Text) in 'Project Owner')))
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
