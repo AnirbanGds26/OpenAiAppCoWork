@@ -1126,7 +1126,7 @@
       "MetaDataIDKey": "",
       "Name": "FaqBtn16Con",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 16,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1333,7 +1333,7 @@
       "MetaDataIDKey": "",
       "Name": "FaqBtnCon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 17,
+      "ParentIndex": 18,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1588,7 +1588,7 @@
       "MetaDataIDKey": "",
       "Name": "faqBtnWidCon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 14,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1908,7 +1908,7 @@
       "MetaDataIDKey": "",
       "Name": "faqBtnWideCon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 18,
+      "ParentIndex": 19,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2312,7 +2312,7 @@
       "MetaDataIDKey": "",
       "Name": "Icon6_12",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 12,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2755,7 +2755,7 @@
       "MetaDataIDKey": "",
       "Name": "iconHelpSlCon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 23,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3034,7 +3034,7 @@
       "MetaDataIDKey": "",
       "Name": "IconRefreshCon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3573,7 +3573,7 @@
       "MetaDataIDKey": "",
       "Name": "Label6Con",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 19,
+      "ParentIndex": 20,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3863,7 +3863,7 @@
       "MetaDataIDKey": "",
       "Name": "Label8_10",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 13,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4160,7 +4160,7 @@
       "MetaDataIDKey": "",
       "Name": "Label8Con",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 15,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7024,7 +7024,7 @@
       "MetaDataIDKey": "",
       "Name": "lblPgConHeader",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8048,7 +8048,7 @@
       "MetaDataIDKey": "",
       "Name": "lblSLConsultingGalCount",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 9,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8994,7 +8994,7 @@
       "MetaDataIDKey": "",
       "Name": "menuBtnCon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9215,7 +9215,7 @@
       "MetaDataIDKey": "",
       "Name": "menuBtnWidthCon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9524,7 +9524,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle3_12",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 11,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10172,14 +10172,7 @@
         "X",
         "Y",
         "Width",
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "",
-          "InvariantPropertyName": "Height",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "Height",
         "ZIndex",
         {
           "AFDDataSourceName": "",
@@ -10212,7 +10205,7 @@
       "MetaDataIDKey": "",
       "Name": "SLConGal",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 10,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10507,7 +10500,7 @@
       "MetaDataIDKey": "",
       "Name": "tglPendReqFilterCon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10868,7 +10861,7 @@
       "MetaDataIDKey": "",
       "Name": "txtSearchGalSLConsulting",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11168,7 +11161,7 @@
       "MetaDataIDKey": "",
       "Name": "UserAddBtn16Con",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 20,
+      "ParentIndex": 21,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11388,7 +11381,7 @@
       "MetaDataIDKey": "",
       "Name": "UserAddBtnCon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 21,
+      "ParentIndex": 22,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11619,7 +11612,7 @@
       "MetaDataIDKey": "",
       "Name": "userMgntBtnWideCon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 22,
+      "ParentIndex": 23,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
