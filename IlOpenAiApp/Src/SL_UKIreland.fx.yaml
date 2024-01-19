@@ -14,7 +14,7 @@ SL_UKIreland As screen:
     "UKIrelandGal As gallery.'BrowseLayout_Vertical_OneImageThreeColumnVariant_ver5.0'":
         BorderColor: =RGBA(255, 230, 0, 1)
         DelayItemLoading: =true
-        Height: =630
+        Height: =650
         Items: =If(tglPendReqFilterUki,Filter('IL-OpenAI-POC-Requests',"United Kingdom" in 'Leading Country'||"Ireland" in 'Leading Country',Status='IL-OpenAI-RequestStatus'.'Awaiting UK&I',(Trim(txtSearchGalSLUKI.Text) in 'Project Name' Or Trim(txtSearchGalSLUKI.Text) in 'Project Owner')),Filter('IL-OpenAI-POC-Requests',"United Kingdom" in 'Leading Country'||"Ireland" in 'Leading Country',(Trim(txtSearchGalSLUKI.Text) in 'Project Name' Or Trim(txtSearchGalSLUKI.Text) in 'Project Owner')))
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data

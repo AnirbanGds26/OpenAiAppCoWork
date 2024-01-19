@@ -15,7 +15,7 @@ SL_TAX As screen:
     "SLTaxGal As gallery.'BrowseLayout_Vertical_OneImageThreeColumnVariant_ver5.0'":
         BorderColor: =RGBA(255, 230, 0, 1)
         DelayItemLoading: =true
-        Height: =663
+        Height: =650
         Items: =If(tglPendReqFilterTax,Filter('IL-OpenAI-POC-Requests','Service Line'="Tax" And Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' And (Trim(txtSearchGalSLTax.Text) in 'Project Name' Or Trim(txtSearchGalSLTax.Text) in 'Project Owner')),Filter('IL-OpenAI-POC-Requests','Service Line'="Tax" And (Trim(txtSearchGalSLTax.Text) in 'Project Name' Or Trim(txtSearchGalSLTax.Text) in 'Project Owner')))
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data

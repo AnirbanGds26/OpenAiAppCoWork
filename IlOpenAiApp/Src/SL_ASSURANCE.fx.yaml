@@ -1,5 +1,9 @@
 SL_ASSURANCE As screen:
     Fill: =RGBA(34, 36, 46, 1)
+    OnHidden: |-
+        =UpdateContext({ctxShowFilterPane: false })
+    OnVisible: |-
+        =UpdateContext({ctxShowFilterPane: false })
 
     lblHeadingAssur As label:
         Color: =RGBA(255, 255, 255, 1)
@@ -14,7 +18,7 @@ SL_ASSURANCE As screen:
     "SLAssuranceGal As gallery.'BrowseLayout_Vertical_OneImageThreeColumnVariant_ver5.0'":
         BorderColor: =RGBA(255, 230, 0, 1)
         DelayItemLoading: =true
-        Height: =663
+        Height: =If(ctxShowFilterPane,615,650)
         Items: =If(tglPendReqFilterAssur,Filter('IL-OpenAI-POC-Requests','Service Line'="Assurance" And Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line' And Not(User().Email in SLApproversEmails) And (Trim(txtSearchGalSLAssurance.Text) in 'Project Name' Or Trim(txtSearchGalSLAssurance.Text) in 'Project Owner')),Filter('IL-OpenAI-POC-Requests','Service Line'="Assurance",(Trim(txtSearchGalSLAssurance.Text) in 'Project Name' Or Trim(txtSearchGalSLAssurance.Text) in 'Project Owner')))
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
@@ -23,7 +27,7 @@ SL_ASSURANCE As screen:
         Width: =1244
         WrapCount: =3
         X: =83
-        Y: =105
+        Y: =If(ctxShowFilterPane,btnFilterBgPaneAssur.Y+btnFilterBgPaneAssur.Height+3,105)
         ZIndex: =2
 
         Rectangle1_22 As rectangle:
@@ -474,11 +478,15 @@ SL_ASSURANCE As screen:
             Y: =562
             ZIndex: =16
 
-    iconFilterAssur As icon.Add:
-        Color: =RGBA(255, 230, 0, 1)
+    iconGalFilterAssur As icon.Add:
+        Color: =RGBA(255,230,0,1)
+        DisabledColor: =RGBA(149, 149, 149, 1)
+        DisplayMode: =If(ctxShowFilterPane,DisplayMode.Disabled,DisplayMode.Edit)
         FocusedBorderThickness: =0
         Height: =30
         Icon: =Icon.Filter
+        OnSelect: |-
+            =UpdateContext({ctxShowFilterPane: true })
         Tooltip: ="Filter"
         Width: =30
         X: =1063
@@ -527,7 +535,7 @@ SL_ASSURANCE As screen:
         Text: ="Showing "&SLAssuranceGal.AllItemsCount&" result(s)"
         Width: =200
         X: =1115
-        Y: =80
+        Y: =SLAssuranceGal.Y-25
         ZIndex: =26
 
     CompGenAiHelp_Assur As CompGenAiHelp:
@@ -546,12 +554,18 @@ SL_ASSURANCE As screen:
         ZIndex: =31
 
         btnFilterBgPaneAssur As button:
-            BorderThickness: =0
-            DisplayMode: =DisplayMode.View
+            BorderColor: =RGBA(46, 46, 56, 1)
+            DisabledBorderColor: =ColorFade(Self.Fill,-50%)
+            DisabledColor: =Self.Color
+            DisabledFill: =ColorFade(Self.Fill,15%)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(46, 46, 56, 1)
+            FocusedBorderThickness: =2
             Height: =65
             Text: =""
+            Visible: =ctxShowFilterPane
             Width: =450
-            X: =iconFilterAssur.X+iconFilterAssur.Width-Self.Width
+            X: =iconGalFilterAssur.X+iconGalFilterAssur.Width-Self.Width
             Y: =lblHeadingAssur.Y+lblHeadingAssur.Height+2
             ZIndex: =19
 
@@ -562,18 +576,19 @@ SL_ASSURANCE As screen:
             Size: =12
             Text: |-
                 ="Country:"
+            Visible: =ctxShowFilterPane
             Width: =85
-            X: =btnFilterBgPaneAssur.X+10
+            X: =btnFilterBgPaneAssur.X+20
             Y: =btnFilterBgPaneAssur.Y+btnFilterBgPaneAssur.Height/2-Self.Height/2
             ZIndex: =20
 
         ddlCountryFilterAssur As dropdown:
             BorderThickness: =0
-            ChevronBackground: =RGBA(255, 230, 0, 1)
-            ChevronFill: =RGBA(102, 102, 102, 1)
+            ChevronBackground: =ColorFade(RGBA(46, 46, 56, 1),40%)
             FocusedBorderThickness: =0
             Height: =35
             Items: =If(tglPendReqFilterAssur,SortByColumns(Distinct(Filter(ccUnqLeadContries,cr41e_serviceline="Assurance" And cr41e_status='IL-OpenAI-RequestStatus'.'Awaiting Service Line'),cr41e_leadingcountry),"Value",SortOrder.Ascending),SortByColumns(Distinct(Filter(ccUnqLeadContries,cr41e_serviceline="Assurance"),cr41e_leadingcountry),"Value",SortOrder.Ascending))
+            Visible: =ctxShowFilterPane
             Width: =200
             X: =lblCountryFilter.X+lblCountryFilter.Width
             Y: =lblCountryFilter.Y
@@ -583,6 +598,9 @@ SL_ASSURANCE As screen:
             Color: =RGBA(255, 255, 255, 1)
             Height: =20
             Icon: =Icon.Cancel
+            OnSelect: |-
+                =UpdateContext({ctxShowFilterPane: false })
+            Visible: =ctxShowFilterPane
             Width: =20
             X: =btnFilterBgPaneAssur.X+btnFilterBgPaneAssur.Width-Self.Width-12
             Y: =btnFilterBgPaneAssur.Y+10

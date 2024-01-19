@@ -53,7 +53,7 @@ SL_DataClass As screen:
     "DataClassGal As gallery.'BrowseLayout_Vertical_OneImageThreeColumnVariant_ver5.0'":
         BorderColor: =RGBA(255, 230, 0, 1)
         DelayItemLoading: =true
-        Height: =619
+        Height: =650
         Items: =If(tglPendReqFilterDc,If(IsMatch(vvLoggedInUserGrp,"Data Protection"),Filter('IL-OpenAI-POC-Requests','Data Classification'="C4",'Data Protection Approval'='IL-OpenAI-Approvals'.'Pending Review',(Trim(txtSearchGalSLUKI_1.Text) in 'Project Name' Or Trim(txtSearchGalSLUKI_1.Text) in 'Project Owner')),IsMatch(vvLoggedInUserGrp,"infosec",MatchOptions.Contains&MatchOptions.IgnoreCase),Filter('IL-OpenAI-POC-Requests','Data Classification'="C4",'InfoSec Approval'='IL-OpenAI-Approvals'.'Pending Review',(Trim(txtSearchGalSLUKI_1.Text) in 'Project Name' Or Trim(txtSearchGalSLUKI_1.Text) in 'Project Owner')),IsMatch(vvLoggedInUserGrp,"risk",MatchOptions.Contains&MatchOptions.IgnoreCase),Filter('IL-OpenAI-POC-Requests','Data Classification'="C4",'Risk Approval'='IL-OpenAI-Approvals'.'Pending Review',(Trim(txtSearchGalSLUKI_1.Text) in 'Project Name' Or Trim(txtSearchGalSLUKI_1.Text) in 'Project Owner'))),Filter('IL-OpenAI-POC-Requests','Data Classification'="C4",(Trim(txtSearchGalSLUKI_1.Text) in 'Project Name' Or Trim(txtSearchGalSLUKI_1.Text) in 'Project Owner')))
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data

@@ -15,7 +15,7 @@ SL_CONSULTING As screen:
     "SLConGal As gallery.'BrowseLayout_Vertical_OneImageThreeColumnVariant_ver5.0'":
         BorderColor: =RGBA(255, 230, 0, 1)
         DelayItemLoading: =true
-        Height: =640
+        Height: =650
         Items: =If(tglPendReqFilterCon,Filter('IL-OpenAI-POC-Requests','Service Line'="Consulting" And Status='IL-OpenAI-RequestStatus'.'Awaiting Service Line',(Trim(txtSearchGalSLConsulting.Text) in 'Project Name' Or Trim(txtSearchGalSLConsulting.Text) in 'Project Owner')),Filter('IL-OpenAI-POC-Requests','Service Line'="Consulting",(Trim(txtSearchGalSLConsulting.Text) in 'Project Name' Or Trim(txtSearchGalSLConsulting.Text) in 'Project Owner')))
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
