@@ -1634,7 +1634,7 @@
       "MetaDataIDKey": "",
       "Name": "btnHistSlAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 11,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2952,7 +2952,7 @@
       "MetaDataIDKey": "",
       "Name": "CompDialogBgCover_Assur1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3042,7 +3042,7 @@
       "MetaDataIDKey": "",
       "Name": "CompDialogBgCover_Assur2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3132,7 +3132,7 @@
       "MetaDataIDKey": "",
       "Name": "CompDialogBgCover_Assur3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15698,7 +15698,7 @@
       "MetaDataIDKey": "",
       "Name": "editSLAssuranceForm",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 18,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21094,7 +21094,7 @@
       "MetaDataIDKey": "",
       "Name": "Gallery4_8",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 27,
+      "ParentIndex": 25,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21632,7 +21632,7 @@
       "MetaDataIDKey": "",
       "Name": "glApproverHistAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 25,
+      "ParentIndex": 23,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21907,7 +21907,7 @@
       "MetaDataIDKey": "",
       "Name": "glHistSlAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 26,
+      "ParentIndex": 24,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -22405,7 +22405,7 @@
       "MetaDataIDKey": "",
       "Name": "icnClsApproverHistAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 17,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -22705,7 +22705,7 @@
       "MetaDataIDKey": "",
       "Name": "icnClsHistSlAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 23,
+      "ParentIndex": 21,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -23004,7 +23004,7 @@
       "MetaDataIDKey": "",
       "Name": "icnHistSlAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 13,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -23424,7 +23424,7 @@
       "MetaDataIDKey": "",
       "Name": "Icon2_8",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 12,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -23901,7 +23901,7 @@
       "MetaDataIDKey": "",
       "Name": "iconSlApprovalHistory",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 10,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -24398,7 +24398,7 @@
       "MetaDataIDKey": "",
       "Name": "Label11_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 21,
+      "ParentIndex": 19,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -24718,7 +24718,7 @@
       "MetaDataIDKey": "",
       "Name": "Label9_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 29,
+      "ParentIndex": 27,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -25044,7 +25044,7 @@
       "MetaDataIDKey": "",
       "Name": "Label9_6",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 28,
+      "ParentIndex": 26,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26007,7 +26007,7 @@
       "MetaDataIDKey": "",
       "Name": "lblHeaderSlAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26340,7 +26340,7 @@
       "MetaDataIDKey": "",
       "Name": "lblHeaderStatusSlAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26674,7 +26674,7 @@
       "MetaDataIDKey": "",
       "Name": "lblPanelApproverHistAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 16,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -27013,7 +27013,7 @@
       "MetaDataIDKey": "",
       "Name": "lblPanelHistSlAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 22,
+      "ParentIndex": 20,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -27366,7 +27366,7 @@
       "MetaDataIDKey": "",
       "Name": "lblStatusProgressAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 9,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -28732,7 +28732,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle13_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 24,
+      "ParentIndex": 22,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -28851,7 +28851,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle2_18",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -29138,7 +29138,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle4_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 29,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -29299,7 +29299,7 @@
       "MetaDataIDKey": "",
       "Name": "Rectangle4_6",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 28,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -29471,7 +29471,7 @@
       "MetaDataIDKey": "",
       "Name": "rectBgHistSlAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -29609,7 +29609,7 @@
       "MetaDataIDKey": "",
       "Name": "rectCommentSecSlAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 19,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -29763,7 +29763,7 @@
       "MetaDataIDKey": "",
       "Name": "rectHeaderSlAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 15,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -29925,7 +29925,7 @@
       "MetaDataIDKey": "",
       "Name": "rectPanelApproverHistAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 14,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -30092,7 +30092,7 @@
       "MetaDataIDKey": "",
       "Name": "rectPanelHistSlAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 20,
+      "ParentIndex": 18,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

@@ -15344,6 +15344,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Edit_Admin.btnYesProvision.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Edit_Admin.btnYesProvision.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "Edit_Admin",
+                "type": "Edit_Admin.btnYesProvision"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Edit_Admin.btnNoProvision.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Edit_Admin.btnNoProvision.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "Edit_Admin",
+                "type": "Edit_Admin.btnNoProvision"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.varname2"
                 }
               ],
@@ -16837,36 +16897,6 @@
           },
           "ruleId": "app-InefficientDelayLoading",
           "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Edit_Admin.ctxShwCompleteDlg"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Edit_Admin.ctxShwCompleteDlg",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "ctxShwCompleteDlg",
-                "module": "Edit_Admin",
-                "type": "Edit_Admin"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 3
         },
         {
           "locations": [

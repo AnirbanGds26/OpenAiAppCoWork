@@ -27,7 +27,7 @@ Edit_Admin As screen:
             BorderStyle: =BorderStyle.Solid
             DataField: ="cr41e_deploymentid"
             Default: =ThisItem.'Deployment ID'
-            DisplayMode: =Parent.DisplayMode
+            DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@'IL-OpenAI-POC-Requests'],DataSourceInfo.DisplayName,"cr41e_deploymentid")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
@@ -1756,4 +1756,71 @@ Edit_Admin As screen:
         X: =40
         Y: =40
         ZIndex: =33
+
+        CompDialogBgCover_Adm_1 As CompDialogBgCover:
+            Visible: =ctxShwCompleteDlg
+            ZIndex: =29
+
+        RectangleProvision As rectangle:
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =1
+            Fill: =RGBA(18, 19, 33, 1)
+            Height: =358
+            Visible: =ctxShwCompleteDlg
+            Width: =639
+            X: =CompDialogBgCover_Adm_1.X+CompDialogBgCover_Adm_1.Width/2-Self.Width/2
+            Y: =CompDialogBgCover_Adm_1.Y+CompDialogBgCover_Adm_1.Height/2-Self.Height/2
+            ZIndex: =30
+
+        LabelProvision As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            FontWeight: =FontWeight.Semibold
+            Height: =150
+            PaddingLeft: =35
+            PaddingRight: =35
+            Size: =16
+            Text: ="You are Provisioning the request. Do you want to proceed?"
+            Visible: =ctxShwCompleteDlg
+            Width: =639
+            X: =363
+            Y: =205
+            ZIndex: =31
+
+        btnYesProvision As button:
+            BorderThickness: =0
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 230, 0, 1)
+            FocusedBorderThickness: =0
+            Height: =45
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =ColorFade(RGBA(255, 230, 0, 100), -20%)
+            OnSelect: |-
+                =Patch('IL-OpenAI-POC-Requests',{'IL-OpenAI-POC-Requests':GUID(varSelectedEntry)},{Status:'IL-OpenAI-RequestStatus'.Provisioned,'Provisioned Date':Now()});UpdateContext({ctxShwCompleteDlg: false });Notify("The request is Provisioned!",NotificationType.Success,2000);Navigate(Admin_screen,ScreenTransition.None)
+            Size: =14
+            Text: ="YES"
+            Visible: =ctxShwCompleteDlg
+            Width: =155
+            X: =528
+            Y: =428
+            ZIndex: =32
+
+        btnNoProvision As button:
+            BorderThickness: =0
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 230, 0, 1)
+            FocusedBorderThickness: =0
+            Height: =45
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =ColorFade(RGBA(255, 230, 0, 100), -20%)
+            OnSelect: |-
+                =UpdateContext({ctxShwCompleteDlg: false })
+            Size: =14
+            Text: ="NO"
+            Visible: =ctxShwCompleteDlg
+            Width: =155
+            X: =707
+            Y: =428
+            ZIndex: =34
 
