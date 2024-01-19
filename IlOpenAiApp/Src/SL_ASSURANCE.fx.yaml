@@ -584,10 +584,12 @@ SL_ASSURANCE As screen:
 
         ddlCountryFilterAssur As dropdown:
             BorderThickness: =0
-            ChevronBackground: =ColorFade(RGBA(46, 46, 56, 1),40%)
+            ChevronBackground: =ColorFade(RGBA(46, 46, 56, 1),30%)
+            ChevronHoverBackground: =ColorFade(Self.ChevronBackground, -20%)
             FocusedBorderThickness: =0
             Height: =35
             Items: =If(tglPendReqFilterAssur,SortByColumns(Distinct(Filter(ccUnqLeadContries,cr41e_serviceline="Assurance" And cr41e_status='IL-OpenAI-RequestStatus'.'Awaiting Service Line'),cr41e_leadingcountry),"Value",SortOrder.Ascending),SortByColumns(Distinct(Filter(ccUnqLeadContries,cr41e_serviceline="Assurance"),cr41e_leadingcountry),"Value",SortOrder.Ascending))
+            SelectionFill: =RGBA(116, 116, 116, 1)
             Visible: =ctxShowFilterPane
             Width: =200
             X: =lblCountryFilter.X+lblCountryFilter.Width
