@@ -1500,7 +1500,7 @@
       "MetaDataIDKey": "",
       "Name": "ddlCountryFilterAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 13,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2953,7 +2953,7 @@
       "MetaDataIDKey": "",
       "Name": "iconCloseFilterAssur",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 11,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6298,7 +6298,7 @@
       "MetaDataIDKey": "",
       "Name": "lblCountryFilter",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 12,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8931,7 +8931,7 @@
       "MetaDataIDKey": "",
       "Name": "lblSLAssurGalCount",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 14,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
